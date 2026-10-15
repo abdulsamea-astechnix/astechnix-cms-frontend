@@ -168,7 +168,7 @@ export default function SecurityCompliance() {
         title="Have specific security or compliance requirements?"
         description="Book a consultation to discuss your security needs. We'll confirm what we can support and how our practices align to your requirements."
       >
-        <Button to={ctaConfig.primary.path} variant="primary" size="lg">
+        <Button href={ctaConfig.primary.path} variant="primary" size="lg">
           {ctaConfig.primary.label}
         </Button>
       </CTASection>

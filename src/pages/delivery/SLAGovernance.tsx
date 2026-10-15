@@ -261,7 +261,7 @@ export default function SLAGovernance() {
         title="Want to understand how SLAs would work for your environment?"
         description="Book a consultation to discuss your requirements. We'll walk through the governance framework and how it applies to your specific context."
       >
-        <Button to={ctaConfig.primary.path} variant="primary" size="lg">
+        <Button href={ctaConfig.primary.path} variant="primary" size="lg">
           {ctaConfig.contextual.slaAssessment.label}
         </Button>
       </CTASection>
