@@ -1,4 +1,7 @@
+"use client";
+
 import { type ReactNode } from "react";
+import Link from "next/link";
 import { Button } from "./Button";
 import { ctaConfig } from "../config/cta";
 
@@ -24,11 +27,11 @@ export function CTASection({
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row justify-center">
             {children ?? (
-              <>
-                <Button to={ctaConfig.primary.path} variant="primary" size="lg">
+              <Link href={ctaConfig.primary.path}>
+                <Button variant="primary" size="lg">
                   {ctaConfig.primary.label}
                 </Button>
-              </>
+              </Link>
             )}
           </div>
         </div>

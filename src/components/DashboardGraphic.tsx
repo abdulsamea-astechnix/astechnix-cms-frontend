@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Activity, ShieldCheck, TrendingUp } from "lucide-react";
 import { useReducedMotion } from "../hooks/useReducedMotion";

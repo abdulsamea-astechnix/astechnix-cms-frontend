@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -27,8 +29,12 @@ export function FAQAccordion({ items }: FAQAccordionProps) {
               className="flex w-full items-center justify-between gap-4 py-5 text-left"
               aria-expanded={isOpen}
             >
-              <span className="text-base font-heading font-semibold text-ink">{item.question}</span>
-              <ChevronDown className={`h-5 w-5 shrink-0 text-ink-muted transition-transform duration-300 ${isOpen ? "rotate-180 text-brand-accent" : ""}`} />
+              <span className="text-base font-heading font-semibold text-ink">
+                {item.question}
+              </span>
+              <ChevronDown
+                className={`h-5 w-5 shrink-0 text-ink-muted transition-transform duration-300 ${isOpen ? "rotate-180 text-brand-accent" : ""}`}
+              />
             </button>
             <AnimatePresence initial={false}>
               {isOpen && (
@@ -39,7 +45,9 @@ export function FAQAccordion({ items }: FAQAccordionProps) {
                   transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                   className="overflow-hidden"
                 >
-                  <p className="pb-5 text-base text-ink-soft leading-[1.7]">{item.answer}</p>
+                  <p className="pb-5 text-base text-ink-soft leading-[1.7]">
+                    {item.answer}
+                  </p>
                 </motion.div>
               )}
             </AnimatePresence>
