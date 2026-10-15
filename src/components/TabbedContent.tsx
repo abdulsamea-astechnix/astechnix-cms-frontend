@@ -1,7 +1,10 @@
+"use client";
+
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export interface TabItem {
   id: string;
@@ -72,13 +75,13 @@ export function TabbedContent({
               {activeTab.description}
             </p>
             {activeTab.linkLabel && activeTab.linkHref && (
-              <a
+              <Link
                 href={activeTab.linkHref}
                 className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-accent hover:gap-3 transition-all"
               >
                 {activeTab.linkLabel}
                 <ArrowRight className="h-4 w-4" />
-              </a>
+              </Link>
             )}
           </motion.div>
         </AnimatePresence>
