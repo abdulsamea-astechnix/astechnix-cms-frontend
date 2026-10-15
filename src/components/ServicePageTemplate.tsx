@@ -1,19 +1,19 @@
-import { Seo } from "../../components/Seo";
-import { PageHeader, type Crumb } from "../../components/Breadcrumbs";
-import { SectionHeader } from "../../components/SectionHeader";
-import { CTASection } from "../../components/CTASection";
-import { SLAFeature } from "../../components/SLAFeature";
+import { Seo } from "@/components/Seo";
+import { PageHeader, type Crumb } from "@/components/Breadcrumbs";
+import { SectionHeader } from "@/components/SectionHeader";
+import { CTASection } from "@/components/CTASection";
+import { SLAFeature } from "@/components/SLAFeature";
 import {
   ProcessTimeline,
   type TimelineStep,
-} from "../../components/ProcessTimeline";
-import { FAQAccordion, type FaqItem } from "../../components/FAQAccordion";
-import { ServiceCard } from "../../components/ServiceCard";
-import { Button } from "../../components/Button";
-import { ImageContentSection } from "../../components/ImageContentSection";
-import { TechShowcase } from "../../components/TechShowcase";
-import { services } from "../../data/content";
-import { ctaConfig } from "../../config/cta";
+} from "@/components/ProcessTimeline";
+import { FAQAccordion, type FaqItem } from "@/components/FAQAccordion";
+import { ServiceCard } from "@/components/ServiceCard";
+import { Button } from "@/components/Button";
+import { ImageContentSection } from "@/components/ImageContentSection";
+import { TechShowcase } from "@/components/TechShowcase";
+import { services } from "@/data/content";
+import { ctaConfig } from "@/config/cta";
 import { Check } from "lucide-react";
 
 export interface ServicePageData {

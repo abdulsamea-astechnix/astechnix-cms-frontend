@@ -1,10 +1,24 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import {
+  ArrowRight,
+  Laptop,
+  ShieldCheck,
+  CloudCog,
+  Headphones,
+} from "lucide-react";
 import { motion } from "framer-motion";
 import type { ServiceSummary } from "../types";
 import { useReducedMotion } from "../hooks/useReducedMotion";
+
+// Map string identifiers to actual icon components
+const iconMap: Record<string, any> = {
+  Laptop,
+  ShieldCheck,
+  CloudCog,
+  Headphones,
+};
 
 interface ServiceCardProps {
   service: ServiceSummary;
@@ -13,7 +27,9 @@ interface ServiceCardProps {
 
 export function ServiceCard({ service, index = 0 }: ServiceCardProps) {
   const reducedMotion = useReducedMotion();
-  const Icon = service.icon;
+
+  // Safely resolve the icon component on the client side
+  const IconComponent = iconMap[service.icon] || Laptop;
 
   return (
     <motion.div
@@ -31,7 +47,7 @@ export function ServiceCard({ service, index = 0 }: ServiceCardProps) {
         className="group block h-full rounded-lg border border-ink/10 bg-white p-7 shadow-card transition-all duration-300 hover:shadow-card-hover hover:border-ink/15"
       >
         <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-accent/10 text-brand-accent transition-colors duration-300 group-hover:bg-brand-accent group-hover:text-white">
-          <Icon className="h-6 w-6" />
+          <IconComponent className="h-6 w-6" />
         </div>
         <h3 className="mt-5 text-lg font-heading font-bold text-ink">
           {service.title}

@@ -1,10 +1,10 @@
-import { Seo } from "../../components/Seo";
-import { PageHeader, type Crumb } from "../../components/Breadcrumbs";
-import { SectionHeader } from "../../components/SectionHeader";
-import { CTASection } from "../../components/CTASection";
-import { Button } from "../../components/Button";
-import { ctaConfig } from "../../config/cta";
-import { caseStudies } from "../../data/content";
+import { Seo } from "@/components/Seo";
+import { PageHeader, type Crumb } from "@/components/Breadcrumbs";
+import { SectionHeader } from "@/components/SectionHeader";
+import { CTASection } from "@/components/CTASection";
+import { Button } from "@/components/Button";
+import { ctaConfig } from "@/config/cta";
+import { caseStudies } from "@/data/content";
 
 const crumbs: Crumb[] = [
   { label: "Home", path: "/" },

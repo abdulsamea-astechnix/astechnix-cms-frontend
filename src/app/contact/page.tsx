@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { Seo } from "../components/Seo";
-import { PageHeader, type Crumb } from "../components/Breadcrumbs";
-import { SectionHeader } from "../components/SectionHeader";
-import { CTASection } from "../components/CTASection";
-import { ContactForm } from "../components/ContactForm";
-import { company } from "../config/company";
+import { Seo } from "@/components/Seo";
+import { PageHeader, type Crumb } from "@/components/Breadcrumbs";
+import { SectionHeader } from "@/components/SectionHeader";
+import { CTASection } from "@/components/CTASection";
+import { ContactForm } from "@/components/ContactForm";
+import { company } from "@/config/company";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 const crumbs: Crumb[] = [{ label: "Home", path: "/" }, { label: "Contact" }];

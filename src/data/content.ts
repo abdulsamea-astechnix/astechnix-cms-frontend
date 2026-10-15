@@ -1,4 +1,3 @@
-import { Laptop, ShieldCheck, CloudCog, Headphones } from "lucide-react";
 import type {
   ServiceSummary,
   ProofPoint,
@@ -12,7 +11,7 @@ export const services: ServiceSummary[] = [
     slug: "endpoint-management-patching",
     title: "Endpoint Management and Patching",
     shortTitle: "Endpoint Management",
-    icon: Laptop,
+    icon: "Laptop", // String identifier
     description:
       "Keeping remote laptops and workstations updated, healthy, and ready for everyday work.",
     path: "/services/endpoint-management",
@@ -21,7 +20,7 @@ export const services: ServiceSummary[] = [
     slug: "endpoint-security-monitoring",
     title: "Endpoint Security and Monitoring",
     shortTitle: "Endpoint Security",
-    icon: ShieldCheck,
+    icon: "ShieldCheck", // String identifier
     description:
       "Protecting devices against threats with proactive monitoring and clear response procedures.",
     path: "/services/endpoint-security",
@@ -30,7 +29,7 @@ export const services: ServiceSummary[] = [
     slug: "vulnerability-cloud-care",
     title: "Vulnerability Checks and Cloud Care",
     shortTitle: "Cloud Care",
-    icon: CloudCog,
+    icon: "CloudCog", // String identifier
     description:
       "Finding and fixing security gaps in cloud infrastructure before they become larger problems.",
     path: "/services/vulnerability-management",
@@ -39,7 +38,7 @@ export const services: ServiceSummary[] = [
     slug: "helpdesk-end-user-support",
     title: "IT Helpdesk and Support",
     shortTitle: "IT Helpdesk",
-    icon: Headphones,
+    icon: "Headphones", // String identifier
     description:
       "Reliable technical help for your team's day-to-day computer, access, and software needs.",
     path: "/services/helpdesk-support",

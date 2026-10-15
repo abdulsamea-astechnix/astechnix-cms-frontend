@@ -4,7 +4,7 @@ export interface ServiceSummary {
   slug: string;
   title: string;
   shortTitle: string;
-  icon: LucideIcon;
+  icon: string;
   description: string;
   path: string;
   isAcronym?: boolean;

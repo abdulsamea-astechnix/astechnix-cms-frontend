@@ -1,10 +1,10 @@
-import { Seo } from "../../components/Seo";
-import { PageHeader, type Crumb } from "../../components/Breadcrumbs";
-import { SectionHeader } from "../../components/SectionHeader";
-import { CTASection } from "../../components/CTASection";
-import { ResponsiveTable } from "../../components/ResponsiveTable";
-import { Button } from "../../components/Button";
-import { ctaConfig } from "../../config/cta";
+import { Seo } from "@/components/Seo";
+import { PageHeader, type Crumb } from "@/components/Breadcrumbs";
+import { SectionHeader } from "@/components/SectionHeader";
+import { CTASection } from "@/components/CTASection";
+import { ResponsiveTable } from "@/components/ResponsiveTable";
+import { Button } from "@/components/Button";
+import { ctaConfig } from "@/config/cta";
 import { Check } from "lucide-react";
 
 const crumbs: Crumb[] = [

@@ -1,13 +1,13 @@
-import { Seo } from "../../components/Seo";
-import { PageHeader, type Crumb } from "../../components/Breadcrumbs";
-import { SectionHeader } from "../../components/SectionHeader";
-import { CTASection } from "../../components/CTASection";
-import { TrustStrip } from "../../components/TrustStrip";
-import { SLAFeature } from "../../components/SLAFeature";
-import { Button } from "../../components/Button";
-import { ctaConfig } from "../../config/cta";
-import { company } from "../../config/company";
-import { proofPoints } from "../../data/content";
+import { Seo } from "@/components/Seo";
+import { PageHeader, type Crumb } from "@/components/Breadcrumbs";
+import { SectionHeader } from "@/components/SectionHeader";
+import { CTASection } from "@/components/CTASection";
+import { TrustStrip } from "@/components/TrustStrip";
+import { SLAFeature } from "@/components/SLAFeature";
+import { Button } from "@/components/Button";
+import { ctaConfig } from "@/config/cta";
+import { company } from "@/config/company";
+import { proofPoints } from "@/data/content";
 
 const crumbs: Crumb[] = [
   { label: "Home", path: "/" },
