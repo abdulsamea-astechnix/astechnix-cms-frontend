@@ -11,8 +11,14 @@ import {
   footerLegal,
   type NavItem,
 } from "../config/navigation";
+import { useState, useEffect } from "react";
 
 export function Footer() {
+  const [currentYear, setCurrentYear] = useState<number | string>(2026);
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
   return (
     <footer className="bg-brand-dark text-white">
       <div className="container-content py-14 md:py-20">
@@ -55,7 +61,7 @@ export function Footer() {
         <div className="mt-14 flex flex-col items-start justify-between gap-6 border-t border-white/10 pt-8 md:flex-row md:items-center">
           <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-6">
             <p className="text-sm text-white/40">
-              © {new Date().getFullYear()} {company.name}. All rights reserved.
+              &copy; {currentYear} {company.name}. All rights reserved.
             </p>
             <button
               onClick={() =>
