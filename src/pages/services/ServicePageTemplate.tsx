@@ -178,7 +178,7 @@ export function ServicePageTemplate({
                 className="mb-6"
               />
               <Button
-                to="/delivery-model/sla-governance-reporting"
+                href="/delivery-model/sla-governance-reporting"
                 variant="secondary"
               >
                 SLA Governance Framework
@@ -309,7 +309,7 @@ export function ServicePageTemplate({
         title={`Ready to discuss ${isAcronym === true ? shortTitle : shortTitle.toLowerCase()}?`}
         description="Book a consultation with our delivery team to explore how this service can be structured for your environment."
       >
-        <Button to={ctaConfig.primary.path} variant="primary" size="lg">
+        <Button href={ctaConfig.primary.path} variant="primary" size="lg">
           {contextualCtaLabel}
         </Button>
       </CTASection>
