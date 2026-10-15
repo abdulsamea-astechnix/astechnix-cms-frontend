@@ -1,5 +1,5 @@
 export const emailjsConfig = {
-  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID ?? "",
-  templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID ?? "",
-  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY ?? "",
+  serviceId: process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID ?? "",
+  templateId: process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID ?? "",
+  publicKey: process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY ?? "",
 } as const;
