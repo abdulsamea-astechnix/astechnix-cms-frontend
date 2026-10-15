@@ -1,3 +1,5 @@
+"use client";
+
 import { Seo } from "../components/Seo";
 import { HeroSection } from "../components/HeroSection";
 import { SectionHeader } from "../components/SectionHeader";
@@ -63,7 +65,7 @@ export default function Home() {
         }
         description="We help organizations keep their remote workstations secure, cloud environments stable, and day-to-day operations running smoothly without the usual overhead."
       >
-        <Button to="/contact" size="lg">
+        <Button href="/contact" size="lg">
           Get in Touch <ArrowRight className="h-4 w-4" />
         </Button>
         <Button
@@ -171,7 +173,7 @@ export default function Home() {
         title="Need a steadier way to manage IT?"
         description="Tell us about your team, devices, and current support needs. We will help you decide where to start."
       >
-        <Button to="/contact" variant="primary" size="lg">
+        <Button href="/contact" variant="primary" size="lg">
           Get in Touch
         </Button>
       </CTASection>
