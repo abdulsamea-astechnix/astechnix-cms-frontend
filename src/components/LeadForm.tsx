@@ -1,5 +1,6 @@
-import { useState, useRef, useEffect, type FormEvent } from "react";
+"use client";
 
+import { useState, useRef, useEffect, type FormEvent } from "react";
 import { commonEmailProviders } from "../data/constants";
 import { FormSuccessState } from "./FormSuccessState";
 import { hasConsentFor } from "../utils/cookieConsent";
@@ -87,9 +88,10 @@ export function LeadForm({
     if (!validate()) return;
     setStatus("submitting");
 
-    const serviceId = import.meta.env.VITE_EMAIL_SERVICE_ID;
-    const templateId = import.meta.env.VITE_IT_OUTSOURCING_EMAIL_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAIL_PUBLIC_KEY;
+    // Converted to Next.js standard public runtime config format
+    const serviceId = process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_IT_OUTSOURCING_EMAIL_TEMPLATE_ID;
+    const publicKey = process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY;
 
     try {
       if (serviceId && templateId && publicKey) {
@@ -112,9 +114,6 @@ export function LeadForm({
         await new Promise((r) => setTimeout(r, 800));
       }
 
-      // Trigger Google Ads conversion tracking — only if marketing
-      // consent has been granted. Without consent, the conversion is
-      // not sent, keeping the site compliant with EU/UK regulations.
       if (hasConsentFor("marketing")) {
         if (typeof window.gtag === "function") {
           window.gtag("event", "conversion", {
@@ -123,7 +122,9 @@ export function LeadForm({
             currency: "INR",
           });
         } else if (
-          Array.isArray((window as unknown as { dataLayer: unknown[] }).dataLayer)
+          Array.isArray(
+            (window as unknown as { dataLayer: unknown[] }).dataLayer,
+          )
         ) {
           (window as unknown as { dataLayer: unknown[] }).dataLayer.push({
             event: "conversion",
@@ -158,7 +159,7 @@ export function LeadForm({
   }
 
   return (
-    <div>
+    <div ref={containerRef}>
       <h2 className="text-xl font-bold text-ink">
         Request an Outsourcing Estimate
       </h2>

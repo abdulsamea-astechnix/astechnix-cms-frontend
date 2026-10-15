@@ -1,3 +1,5 @@
+"use client";
+
 import { type ReactNode } from "react";
 import { motion } from "framer-motion";
 import { useReducedMotion } from "../hooks/useReducedMotion";
@@ -27,9 +29,13 @@ export function ImageContentSection({
   return (
     <section className={isTinted ? "bg-canvas/50" : "bg-white"}>
       <div className="container-content py-section-sm md:py-section">
-        <div className={`grid items-center gap-10 lg:gap-16 lg:grid-cols-2 ${reverse ? "lg:grid-flow-dense" : ""}`}>
+        <div
+          className={`grid items-center gap-10 lg:gap-16 lg:grid-cols-2 ${reverse ? "lg:grid-flow-dense" : ""}`}
+        >
           <motion.div
-            initial={reducedMotion ? false : { opacity: 0, x: reverse ? 30 : -30 }}
+            initial={
+              reducedMotion ? false : { opacity: 0, x: reverse ? 30 : -30 }
+            }
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -47,14 +53,18 @@ export function ImageContentSection({
           </motion.div>
 
           <motion.div
-            initial={reducedMotion ? false : { opacity: 0, x: reverse ? -30 : 30 }}
+            initial={
+              reducedMotion ? false : { opacity: 0, x: reverse ? -30 : 30 }
+            }
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             className={reverse ? "lg:col-start-1 lg:row-start-1" : ""}
           >
             {eyebrow && (
-              <p className="text-sm font-semibold uppercase tracking-[0.15em] text-brand-accent mb-4">{eyebrow}</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.15em] text-brand-accent mb-4">
+                {eyebrow}
+              </p>
             )}
             <h2 className="heading-2 text-ink">{title}</h2>
             <div className="mt-5 space-y-4">{children}</div>

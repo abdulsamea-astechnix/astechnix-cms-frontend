@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef } from "react";
 import { CheckCircle2, Mail, MessageSquare, Phone } from "lucide-react";
 import { company } from "../config/company";

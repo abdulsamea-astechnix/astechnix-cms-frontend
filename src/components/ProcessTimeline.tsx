@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 
@@ -14,7 +16,6 @@ interface ProcessTimelineProps {
 export function ProcessTimeline({ steps }: ProcessTimelineProps) {
   const reducedMotion = useReducedMotion();
 
-  // Dynamically balance grid columns based on number of steps (max 4 columns for 4 items)
   const gridColsClass =
     steps.length === 4
       ? "lg:grid-cols-4"
@@ -37,17 +38,14 @@ export function ProcessTimeline({ steps }: ProcessTimelineProps) {
           }}
           className="relative flex flex-col items-center text-center"
         >
-          {/* Badge */}
           <span className="z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-dark text-sm font-heading font-bold text-white">
             {s.step}
           </span>
 
-          {/* Connector Line */}
           {i < steps.length - 1 && (
             <span className="absolute top-5 left-[calc(50%+20px)] z-0 hidden h-px w-[calc(100%-20px)] bg-ink/10 lg:block" />
           )}
 
-          {/* Text Content */}
           <h3 className="mt-5 text-base font-heading font-bold text-ink">
             {s.title}
           </h3>

@@ -1,5 +1,8 @@
+"use client";
+
 import { useState, useEffect, useRef, type KeyboardEvent } from "react";
-import { Link, useLocation } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Menu, X, ArrowRight, Phone } from "lucide-react";
 import { navigation } from "../config/navigation";
@@ -12,7 +15,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
-  const location = useLocation();
+  const pathname = usePathname() ?? "";
   const reducedMotion = useReducedMotion();
 
   useEffect(() => {
@@ -25,7 +28,7 @@ export function Header() {
   useEffect(() => {
     setMobileOpen(false);
     setOpenMenu(null);
-  }, [location.pathname]);
+  }, [pathname]);
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
@@ -54,27 +57,24 @@ export function Header() {
       >
         <div className="container-content">
           <div className="flex h-16 items-center justify-between lg:h-[72px]">
-            {/* Logo with flex-shrink prevention */}
             <Link
-              to="/"
+              href="/"
               className="flex items-center shrink-0"
               aria-label="AStechnix home"
             >
               <Logo className="h-8 w-auto lg:h-9" />
             </Link>
 
-            {/* Desktop Navigation */}
             <DesktopNavigation
               openMenu={openMenu}
               setOpenMenu={setOpenMenu}
-              currentPath={location.pathname}
+              currentPath={pathname}
               reducedMotion={reducedMotion}
             />
 
-            {/* Actions: Prevents wrapping & forces shrink protection */}
             <div className="hidden lg:flex items-center gap-2 xl:gap-3 shrink-0">
               <Link
-                to={ctaConfig.primary.path}
+                href={ctaConfig.primary.path}
                 className="text-sm font-semibold text-brand-dark hover:text-brand-accent transition-colors whitespace-nowrap"
               >
                 Contact Us
@@ -88,7 +88,6 @@ export function Header() {
               </a>
             </div>
 
-            {/* Mobile Hamburger Toggle */}
             <button
               onClick={() => setMobileOpen(true)}
               className="flex h-10 w-10 items-center justify-center rounded-md text-ink hover:bg-surface lg:hidden"
@@ -103,7 +102,7 @@ export function Header() {
       <MobileNavigation
         open={mobileOpen}
         onClose={() => setMobileOpen(false)}
-        currentPath={location.pathname}
+        currentPath={pathname}
         reducedMotion={reducedMotion}
       />
     </>
@@ -162,7 +161,7 @@ function DesktopNavigation({
               </button>
             ) : (
               <Link
-                to={group.path}
+                href={group.path}
                 className={`px-2.5 xl:px-3.5 py-2 text-xs xl:text-sm font-medium transition-colors duration-200 whitespace-nowrap ${
                   isActive
                     ? "text-brand-accent"
@@ -186,7 +185,7 @@ function DesktopNavigation({
                     {group.children!.map((child) => (
                       <Link
                         key={child.path}
-                        to={child.path}
+                        href={child.path}
                         className={`group flex items-center justify-between px-4 py-3 text-sm transition-colors hover:bg-canvas/60 ${
                           currentPath === child.path
                             ? "font-semibold text-brand-accent"
@@ -284,7 +283,7 @@ function MobileNavigation({
                       {group.children.map((child) => (
                         <Link
                           key={child.path}
-                          to={child.path}
+                          href={child.path}
                           className={`block rounded-md px-3 py-2.5 text-sm transition-colors ${
                             currentPath === child.path
                               ? "bg-brand-accent/10 font-semibold text-brand-accent"
@@ -297,7 +296,7 @@ function MobileNavigation({
                     </div>
                   ) : (
                     <Link
-                      to={group.path}
+                      href={group.path}
                       className={`block rounded-md px-3 py-2.5 text-sm transition-colors ${
                         currentPath === group.path
                           ? "bg-brand-accent/10 font-semibold text-brand-accent"
@@ -311,8 +310,8 @@ function MobileNavigation({
               ))}
               <div className="mt-6 border-t border-ink/10 pt-4">
                 <Link
-                  to={ctaConfig.primary.path}
-                  className="btn-primary w-full"
+                  href={ctaConfig.primary.path}
+                  className="btn-primary w-full text-center block py-2.5"
                 >
                   {ctaConfig.primary.label}
                 </Link>

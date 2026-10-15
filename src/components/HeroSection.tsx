@@ -1,3 +1,5 @@
+"use client";
+
 import { type ReactNode } from "react";
 import { motion } from "framer-motion";
 import { useReducedMotion } from "../hooks/useReducedMotion";
@@ -11,13 +13,22 @@ interface HeroSectionProps {
   backgroundImage?: string;
 }
 
-export function HeroSection({ eyebrow, title, description, children, variant = "light", backgroundImage }: HeroSectionProps) {
+export function HeroSection({
+  eyebrow,
+  title,
+  description,
+  children,
+  variant = "light",
+  backgroundImage,
+}: HeroSectionProps) {
   const reducedMotion = useReducedMotion();
   const isDark = variant === "dark";
   const hasImage = !!backgroundImage;
 
   return (
-    <section className={`relative overflow-hidden ${isDark ? "bg-brand-dark text-white" : "bg-white"}`}>
+    <section
+      className={`relative overflow-hidden ${isDark ? "bg-brand-dark text-white" : "bg-white"}`}
+    >
       {hasImage && (
         <>
           <div className="absolute inset-0">
@@ -32,9 +43,13 @@ export function HeroSection({ eyebrow, title, description, children, variant = "
           <div className="absolute inset-0 grid-pattern-dark opacity-30" />
         </>
       )}
-      {!hasImage && isDark && <div className="absolute inset-0 grid-pattern-dark opacity-50" />}
+      {!hasImage && isDark && (
+        <div className="absolute inset-0 grid-pattern-dark opacity-50" />
+      )}
       <div className="container-content relative">
-        <div className={`py-16 md:py-24 lg:py-32 ${hasImage ? "max-w-3xl" : "max-w-4xl"}`}>
+        <div
+          className={`py-16 md:py-24 lg:py-32 ${hasImage ? "max-w-3xl" : "max-w-4xl"}`}
+        >
           <motion.div
             initial={reducedMotion ? false : { opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
