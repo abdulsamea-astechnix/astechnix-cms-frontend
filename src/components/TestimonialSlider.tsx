@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useReducedMotion } from "../hooks/useReducedMotion";
@@ -12,7 +14,8 @@ export function TestimonialSlider({ testimonials }: TestimonialSliderProps) {
   const reducedMotion = useReducedMotion();
 
   const next = () => setIndex((i) => (i + 1) % testimonials.length);
-  const prev = () => setIndex((i) => (i - 1 + testimonials.length) % testimonials.length);
+  const prev = () =>
+    setIndex((i) => (i - 1 + testimonials.length) % testimonials.length);
 
   const t = testimonials[index];
 
@@ -47,14 +50,22 @@ export function TestimonialSlider({ testimonials }: TestimonialSliderProps) {
                         {t.initials}
                       </div>
                       <div>
-                        <p className="font-heading font-semibold text-ink text-sm">{t.author}</p>
-                        <p className="text-sm text-ink-muted">{t.role}, {t.company}</p>
+                        <p className="font-heading font-semibold text-ink text-sm">
+                          {t.author}
+                        </p>
+                        <p className="text-sm text-ink-muted">
+                          {t.role}, {t.company}
+                        </p>
                       </div>
                     </div>
                   </div>
                   <div className="shrink-0 border-l-0 md:border-l border-ink/10 md:pl-8">
-                    <p className="font-heading text-4xl font-extrabold text-brand-accent">{t.metric.value}</p>
-                    <p className="mt-1 text-sm text-ink-muted max-w-[140px]">{t.metric.label}</p>
+                    <p className="font-heading text-4xl font-extrabold text-brand-accent">
+                      {t.metric.value}
+                    </p>
+                    <p className="mt-1 text-sm text-ink-muted max-w-[140px]">
+                      {t.metric.label}
+                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -62,9 +73,10 @@ export function TestimonialSlider({ testimonials }: TestimonialSliderProps) {
 
             <div className="mt-8 flex items-center justify-between">
               <p className="text-sm text-ink-muted font-medium">
-                <span className="text-brand-accent font-heading font-bold">{String(index + 1).padStart(2, "0")}</span>
-                {" "}/{" "}
-                {String(testimonials.length).padStart(2, "0")}
+                <span className="text-brand-accent font-heading font-bold">
+                  {String(index + 1).padStart(2, "0")}
+                </span>{" "}
+                / {String(testimonials.length).padStart(2, "0")}
               </p>
               <div className="flex gap-2">
                 <button
@@ -72,14 +84,30 @@ export function TestimonialSlider({ testimonials }: TestimonialSliderProps) {
                   className="flex h-11 w-11 items-center justify-center rounded-md border border-ink/15 text-ink-soft transition-colors hover:border-brand-accent hover:text-brand-accent"
                   aria-label="Previous testimonial"
                 >
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8L10 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path
+                      d="M10 12L6 8L10 4"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
                 </button>
                 <button
                   onClick={next}
                   className="flex h-11 w-11 items-center justify-center rounded-md border border-ink/15 text-ink-soft transition-colors hover:border-brand-accent hover:text-brand-accent"
                   aria-label="Next testimonial"
                 >
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path
+                      d="M6 12L10 8L6 4"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
                 </button>
               </div>
             </div>

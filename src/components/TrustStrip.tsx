@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import type { ProofPoint } from "../types";
 import { useReducedMotion } from "../hooks/useReducedMotion";
@@ -24,7 +26,9 @@ export function TrustStrip({ points }: TrustStripProps) {
             >
               <p className="font-heading text-3xl font-extrabold text-brand-dark md:text-4xl">
                 {point.value}
-                {point.suffix && <span className="text-brand-accent">{point.suffix}</span>}
+                {point.suffix && (
+                  <span className="text-brand-accent">{point.suffix}</span>
+                )}
               </p>
               <p className="mt-1.5 text-sm text-ink-muted">{point.label}</p>
             </motion.div>
