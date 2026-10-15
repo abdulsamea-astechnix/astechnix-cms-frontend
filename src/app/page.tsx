@@ -1,69 +1,189 @@
-import Image from "next/image";
+"use client";
+
+import { Seo } from "@/components/Seo";
+import { HeroSection } from "@/components/HeroSection";
+import { SectionHeader } from "@/components/SectionHeader";
+import { ServiceCard } from "@/components/ServiceCard";
+import { StatsBar } from "@/components/StatsBar";
+import { ClientLogos } from "@/components/ClientLogos";
+import { CTASection } from "@/components/CTASection";
+import { Button } from "@/components/Button";
+import { ImageContentSection } from "@/components/ImageContentSection";
+import { FAQAccordion, type FaqItem } from "@/components/FAQAccordion";
+import { TechShowcase } from "@/components/TechShowcase";
+import {
+  services,
+  proofPoints,
+  clientLogos,
+  techCategories,
+} from "@/data/content";
+import { heroImages, sectionImages } from "@/config/images";
+import { ArrowRight, Check } from "lucide-react";
+import Link from "next/link";
+
+const faqs: FaqItem[] = [
+  {
+    question: "Can you support remote and hybrid teams?",
+    answer:
+      "Yes. We support remote workstations, user access, cloud environments, and day-to-day IT issues for teams working across locations.",
+  },
+  {
+    question: "What happens to our existing IT team?",
+    answer:
+      "We can work alongside your team, take care of a defined service area, or manage day-to-day support. We agree responsibilities and escalation paths before work begins.",
+  },
+  {
+    question: "Which tools can you work with?",
+    answer:
+      "Our team works with Microsoft Intune, CrowdStrike, Tenable, Qualys, ServiceNow, AWS, and Azure. We can also work with the tools already in your environment.",
+  },
+  {
+    question: "Do you offer long-term support agreements?",
+    answer:
+      "Yes. A maintenance agreement can be useful once we understand your environment and have built a working support process together. It is an option, not a requirement.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <Seo
+        meta={{
+          title: "AStechnix | IT Infrastructure and Remote Support",
+          description:
+            "AStechnix helps growing teams manage endpoints, protect devices, care for cloud environments, and resolve day-to-day IT issues.",
+        }}
+      />
+      <HeroSection
+        variant="dark"
+        backgroundImage={heroImages.home}
+        eyebrow="Enterprise IT Operations"
+        title={
+          <>
+            Reliable IT Infrastructure and Remote Support for{" "}
+            <span className="text-brand-accent">Growing Teams</span>
+          </>
+        }
+        description="We help organizations keep their remote workstations secure, cloud environments stable, and day-to-day operations running smoothly without the usual overhead."
+      >
+        {/* Updated Button wrapping Next.js Link or utilizing standard routes */}
+        <Link href="/contact">
+          <Button size="lg" asChild={false}>
+            Get in Touch <ArrowRight className="h-4 w-4" />
+          </Button>
+        </Link>
+        <Button
+          onClick={() => {
+            const element = document.getElementById("core-services");
+            if (element) {
+              element.scrollIntoView({ behavior: "smooth" });
+            } else {
+              console.warn("Element with id 'core-services' not found");
+            }
+          }}
+          variant="outline-white"
+          size="lg"
+        >
+          Explore Our Services
+        </Button>
+      </HeroSection>
+
+      <ClientLogos logos={clientLogos} />
+      <StatsBar points={proofPoints} variant="tainted" />
+
+      <section id="core-services" className="section-padding bg-white">
+        <div className="container-content">
+          <SectionHeader
+            eyebrow="Core Services"
+            title={
+              <>
+                Practical support for the systems your team{" "}
+                <span className="emphasis">depends on</span>
+              </>
+            }
+            description="Clear service areas for endpoint care, device security, cloud environments, and everyday IT support."
+            className="mb-12"
+          />
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {services.map((service, index) => (
+              <ServiceCard key={service.slug} service={service} index={index} />
+            ))}
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <ImageContentSection
+        image={sectionImages.teamCollaboration}
+        imageAlt="IT team working together"
+        eyebrow="How We Help"
+        title={
+          <>
+            Keep everyday IT work{" "}
+            <span className="emphasis">under control</span>
+          </>
+        }
+        variant="tinted"
+      >
+        <p className="text-body">
+          Your team should be able to work without chasing updates, device
+          issues, access problems, or unclear security alerts. We provide
+          practical support that keeps those tasks moving.
+        </p>
+        <div className="space-y-3 pt-2">
+          {[
+            "Remote laptops and workstations kept updated",
+            "Security alerts reviewed and acted on",
+            "Cloud environments checked for common gaps",
+            "Support requests handled through a clear process",
+          ].map((point) => (
+            <div key={point} className="flex items-start gap-3">
+              <Check className="mt-0.5 h-5 w-5 shrink-0 text-brand-accent" />
+              <p className="text-body-sm">{point}</p>
+            </div>
+          ))}
         </div>
-      </main>
-    </div>
+      </ImageContentSection>
+
+      <section className="section-padding border-y border-ink/10 bg-canvas/35">
+        <div className="container-content">
+          <SectionHeader
+            eyebrow="Tools We Use"
+            title={
+              <>
+                Trusted enterprise tools for{" "}
+                <span className="emphasis">daily operations</span>
+              </>
+            }
+            description="We work with established platforms used by enterprise IT teams every day."
+            align="center"
+            className="mb-10"
+          />
+          <TechShowcase categories={techCategories} variant="light" />
+        </div>
+      </section>
+
+      <section className="section-padding bg-white">
+        <div className="container-content max-w-3xl">
+          <SectionHeader
+            eyebrow="FAQ"
+            title="Common questions"
+            align="center"
+            className="mb-8"
+          />
+          <FAQAccordion items={faqs} />
+        </div>
+      </section>
+
+      <CTASection
+        title="Need a steadier way to manage IT?"
+        description="Tell us about your team, devices, and current support needs. We will help you decide where to start."
+      >
+        <Link href="/contact">
+          <Button variant="primary" size="lg">
+            Get in Touch
+          </Button>
+        </Link>
+      </CTASection>
+    </>
   );
 }
