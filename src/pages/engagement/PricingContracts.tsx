@@ -180,7 +180,7 @@ export default function PricingContracts() {
         title="Need a custom quote for your device fleet?"
         description="Share your endpoint count and support requirements. We'll provide a transparent pricing proposal with no obligation."
       >
-        <Button to={ctaConfig.primary.path} variant="primary" size="lg">
+        <Button href={ctaConfig.primary.path} variant="primary" size="lg">
           {ctaConfig.primary.label}
         </Button>
       </CTASection>
