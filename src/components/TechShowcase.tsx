@@ -15,7 +15,7 @@ export function TechShowcase({
 
   return (
     <div
-      className={`rounded-lg border p-8 md:p-10 ${isDark ? "border-white/10 bg-white/5" : "border-ink/10 bg-canvas/50"}`}
+      className={`rounded-lg border p-8 md:p-10 ${isDark ? "border-white/10 bg-white/5" : "border-ink/10 bg-white"}`}
     >
       <div className="flex flex-wrap justify-center gap-8 sm:gap-10 lg:gap-14">
         {categories.map((cat) => (

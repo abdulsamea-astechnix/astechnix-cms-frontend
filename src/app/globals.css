@@ -10,8 +10,8 @@
   --color-ink: #1a2332;
   --color-ink-soft: #475569;
   --color-ink-muted: #94a3b8;
-  --color-canvas: #f8fafc;
-  --color-surface: #f1f5f9;
+  --color-canvas: #d8e3ee;
+  --color-surface: #c5d2e0;
 
   --ease-enterprise: cubic-bezier(0.22, 1, 0.36, 1);
 
@@ -187,6 +187,10 @@
   .section-dark {
     background-color: var(--color-brand-dark);
     color: #ffffff;
+  }
+
+  .section-tinted {
+    background-color: var(--color-canvas);
   }
 
   .heading-display {

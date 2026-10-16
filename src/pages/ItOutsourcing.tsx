@@ -343,7 +343,7 @@ export default function ItOutsourcing() {
       </section>
 
       {/* 3. PROBLEM VS. SOLUTION MATRIX — White bg */}
-      <section className="bg-canvas/50 py-14 md:py-20">
+      <section className="bg-canvas py-14 md:py-20">
         <div className="container-content">
           <SectionHeader
             align="center"
@@ -432,7 +432,7 @@ export default function ItOutsourcing() {
       </section>
 
       {/* 5. DELIVERY FRAMEWORK & TRANSITION TIMELINE — White bg */}
-      <section className="bg-canvas/50 py-14 md:py-20">
+      <section className="bg-canvas py-14 md:py-20">
         <div className="container-content">
           <SectionHeader
             align="center"

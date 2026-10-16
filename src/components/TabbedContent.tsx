@@ -31,7 +31,7 @@ export function TabbedContent({
   const [active, setActive] = useState(tabs[0].id);
   const reducedMotion = useReducedMotion();
   const activeTab = tabs.find((t) => t.id === active) ?? tabs[0];
-  const color = variant === "light" ? "bg-white" : "bg-canvas/50";
+  const color = variant === "light" ? "bg-white" : "bg-canvas";
 
   return (
     <section

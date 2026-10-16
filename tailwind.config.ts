@@ -7,8 +7,8 @@ export default {
         "brand-dark": "#23374D",
         "brand-accent": "#1089FF",
         "brand-accent-light": "#3BA0FF",
-        surface: "#E5E5E5",
-        canvas: "#EEEEEE",
+        surface: "#C5D2E0",
+        canvas: "#D8E3EE",
         ink: {
           DEFAULT: "#1A2332",
           soft: "#3D4F63",

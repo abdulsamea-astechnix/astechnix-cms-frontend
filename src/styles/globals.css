@@ -76,6 +76,10 @@
     @apply bg-brand-dark text-white;
   }
 
+  .section-tinted {
+    @apply bg-canvas;
+  }
+
   .heading-display {
     @apply font-heading font-extrabold text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight;
   }

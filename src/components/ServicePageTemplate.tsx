@@ -113,7 +113,7 @@ export function ServicePageTemplate({
         </div>
       </section>
 
-      <section className="section-padding bg-canvas/50">
+      <section className="section-padding bg-canvas">
         <div className="container-content">
           <SectionHeader
             eyebrow="Capabilities"
@@ -162,7 +162,7 @@ export function ServicePageTemplate({
         </div>
       </section>
 
-      <section className="section-padding bg-canvas/50">
+      <section className="section-padding bg-canvas">
         <div className="container-content">
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
             <div>
@@ -230,7 +230,7 @@ export function ServicePageTemplate({
         </div>
       </section>
 
-      <section className="section-padding bg-canvas/50">
+      <section className="section-padding bg-canvas">
         <div className="container-content">
           <SectionHeader
             eyebrow="Delivery Process"
@@ -270,7 +270,7 @@ export function ServicePageTemplate({
         </div>
       </section>
 
-      <section className="section-padding bg-canvas/50">
+      <section className="section-padding bg-canvas">
         <div className="container-content max-w-3xl">
           <SectionHeader
             eyebrow="FAQ"

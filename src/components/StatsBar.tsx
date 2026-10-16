@@ -16,7 +16,7 @@ export function StatsBar({ points, variant = "light" }: StatsBarProps) {
 
   return (
     <section
-      className={`${isTainted ? "bg-canvas/50" : isDark ? "bg-brand-dark text-white" : "bg-white border-y border-ink/10"}`}
+      className={`${isTainted ? "bg-canvas" : isDark ? "bg-brand-dark text-white" : "bg-white border-y border-ink/10"}`}
     >
       <div className="container-content">
         <div className="grid grid-cols-2 gap-8 py-12 md:grid-cols-4 md:py-16">

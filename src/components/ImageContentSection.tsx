@@ -27,7 +27,7 @@ export function ImageContentSection({
   const isTinted = variant === "tinted";
 
   return (
-    <section className={isTinted ? "bg-canvas/50" : "bg-white"}>
+    <section className={isTinted ? "bg-canvas" : "bg-white"}>
       <div className="container-content py-section-sm md:py-section">
         <div
           className={`grid items-center gap-10 lg:gap-16 lg:grid-cols-2 ${reverse ? "lg:grid-flow-dense" : ""}`}
