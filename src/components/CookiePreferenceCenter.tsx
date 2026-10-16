@@ -421,24 +421,21 @@ function ToggleSwitch({
   onClick: () => void;
 }) {
   return (
-    <button
-      type="button"
+    <div
       role="switch"
       aria-checked={isOn}
       aria-label={label}
-      disabled={disabled}
-      onClick={onClick}
-      className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 ${
-        isOn ? "bg-brand-accent" : "bg-ink/15"
-      } ${disabled ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
+      aria-disabled={disabled}
+      onClick={disabled ? undefined : onClick}
+      className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 ${
+        disabled ? "opacity-60 cursor-not-allowed" : "cursor-pointer"
+      } ${isOn ? "bg-brand-accent" : "bg-ink/20"}`}
     >
       <span
-        className={`inline-flex h-5 w-5 transform items-center justify-center rounded-full bg-white shadow-sm transition-transform duration-300 ${
-          isOn ? "translate-x-5" : "translate-x-0.5"
+        className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow-lg ring-0 transition-transform ${
+          isOn ? "translate-x-6" : "translate-x-1"
         }`}
-      >
-        {isOn && disabled && <Check className="h-3 w-3 text-brand-accent" />}
-      </span>
-    </button>
+      />
+    </div>
   );
 }

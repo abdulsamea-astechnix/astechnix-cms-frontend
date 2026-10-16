@@ -68,7 +68,7 @@ export default function Home() {
       >
         {/* Updated Button wrapping Next.js Link or utilizing standard routes */}
         <Link href="/contact">
-          <Button size="lg" asChild={false}>
+          <Button href="/contact" size="lg">
             Get in Touch <ArrowRight className="h-4 w-4" />
           </Button>
         </Link>
