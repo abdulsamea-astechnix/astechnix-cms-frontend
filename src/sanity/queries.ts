@@ -1,4 +1,5 @@
 import { client } from "./lib/client";
+import { cacheLife } from "next/cache";
 
 export interface BlogPostSummary {
   _id: string;
@@ -30,11 +31,7 @@ function calculateReadingTime(body: unknown[]): number {
       const children = (block as { children?: unknown[] }).children;
       if (Array.isArray(children)) {
         for (const child of children) {
-          if (
-            typeof child === "object" &&
-            child !== null &&
-            "text" in child
-          ) {
+          if (typeof child === "object" && child !== null && "text" in child) {
             const text = (child as { text: string }).text;
             wordCount += text.split(/\s+/).filter(Boolean).length;
           }
@@ -86,6 +83,9 @@ const postFields = `
 `;
 
 export async function getAllPosts(): Promise<BlogPostSummary[]> {
+  "use cache";
+  cacheLife("hours");
+
   const query = `*[_type == "post" && defined(publishedAt)] | order(publishedAt desc) {
     ${postFields}
   }`;
@@ -121,23 +121,22 @@ export async function getAllPosts(): Promise<BlogPostSummary[]> {
 export async function getPostBySlug(
   slug: string,
 ): Promise<BlogPostFull | null> {
+  "use cache";
+  cacheLife("hours");
   const query = `*[_type == "post" && slug.current == $slug && defined(publishedAt)][0] {
     ${postFields}
   }`;
 
-  const post = await client.fetch<
-    | {
-        _id: string;
-        title: string;
-        slug: string;
-        publishedAt: string;
-        body: unknown[];
-        author: { name: string; image: unknown } | null;
-        categories: { title: string }[] | null;
-        mainImage: { asset: { _ref: string }; alt?: string } | null;
-      }
-    | null
-  >(query, { slug });
+  const post = await client.fetch<{
+    _id: string;
+    title: string;
+    slug: string;
+    publishedAt: string;
+    body: unknown[];
+    author: { name: string; image: unknown } | null;
+    categories: { title: string }[] | null;
+    mainImage: { asset: { _ref: string }; alt?: string } | null;
+  } | null>(query, { slug });
 
   if (!post) return null;
 
@@ -158,6 +157,9 @@ export async function getPostBySlug(
 }
 
 export async function getAllPostSlugs(): Promise<string[]> {
+  "use cache";
+  cacheLife("hours");
+
   const query = `*[_type == "post" && defined(publishedAt) && defined(slug.current)].slug.current`;
   return client.fetch<string[]>(query);
 }

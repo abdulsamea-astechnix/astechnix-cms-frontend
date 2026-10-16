@@ -6,7 +6,8 @@ import { getAllPosts, type BlogPostSummary } from "@/sanity/queries";
 import { ArrowRight, Clock, Calendar } from "lucide-react";
 import Link from "next/link";
 
-export const revalidate = 60;
+// export const revalidate = 60;
+// export const dynamic = "force-dynamic";
 
 async function fetchPosts(): Promise<BlogPostSummary[]> {
   try {
