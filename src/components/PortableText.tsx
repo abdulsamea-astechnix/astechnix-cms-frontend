@@ -1,0 +1,82 @@
+"use client";
+
+import { PortableText as BasePortableText } from "@portabletext/react";
+import Link from "next/link";
+import type { TypedObject } from "sanity";
+
+interface PortableTextProps {
+  value: TypedObject[] | unknown[];
+}
+
+const components = {
+  types: {
+    image: ({ value }: { value: { asset?: { _ref: string }; alt?: string } }) => {
+      return (
+        <div className="my-8 overflow-hidden rounded-xl">
+          <img
+            src=""
+            alt={value.alt ?? ""}
+            className="w-full rounded-xl"
+          />
+        </div>
+      );
+    },
+  },
+  marks: {
+    link: ({
+      children,
+      value,
+    }: {
+      children: React.ReactNode;
+      value?: { href?: string };
+    }) => {
+      const href = value?.href ?? "#";
+      if (href.startsWith("/")) {
+        return (
+          <Link href={href} className="text-brand-accent underline underline-offset-2 hover:text-brand-accent-dark">
+            {children}
+          </Link>
+        );
+      }
+      return (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-brand-accent underline underline-offset-2 hover:text-brand-accent-dark"
+        >
+          {children}
+        </a>
+      );
+    },
+  },
+  block: {
+    h1: ({ children }: { children: React.ReactNode }) => (
+      <h1 className="prose-content h1">{children}</h1>
+    ),
+    h2: ({ children }: { children: React.ReactNode }) => (
+      <h2 className="prose-content h2">{children}</h2>
+    ),
+    h3: ({ children }: { children: React.ReactNode }) => (
+      <h3 className="prose-content h3">{children}</h3>
+    ),
+    h4: ({ children }: { children: React.ReactNode }) => (
+      <h4 className="text-lg font-heading font-bold text-ink mt-6 mb-3">
+        {children}
+      </h4>
+    ),
+    blockquote: ({ children }: { children: React.ReactNode }) => (
+      <blockquote className="border-l-3 border-brand-accent pl-5 my-6 italic text-ink-soft">
+        {children}
+      </blockquote>
+    ),
+  },
+};
+
+export function PortableText({ value }: PortableTextProps) {
+  return (
+    <div className="prose-content">
+      <BasePortableText value={value as TypedObject[]} components={components} />
+    </div>
+  );
+}

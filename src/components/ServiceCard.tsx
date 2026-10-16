@@ -12,8 +12,7 @@ import { motion } from "framer-motion";
 import type { ServiceSummary } from "../types";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 
-// Map string identifiers to actual icon components
-const iconMap: Record<string, any> = {
+const iconMap: Record<string, typeof Laptop> = {
   Laptop,
   ShieldCheck,
   CloudCog,
@@ -27,8 +26,6 @@ interface ServiceCardProps {
 
 export function ServiceCard({ service, index = 0 }: ServiceCardProps) {
   const reducedMotion = useReducedMotion();
-
-  // Safely resolve the icon component on the client side
   const IconComponent = iconMap[service.icon] || Laptop;
 
   return (
@@ -44,9 +41,9 @@ export function ServiceCard({ service, index = 0 }: ServiceCardProps) {
     >
       <Link
         href={service.path}
-        className="group block h-full rounded-lg border border-ink/10 bg-white p-7 shadow-card transition-all duration-300 hover:shadow-card-hover hover:border-ink/15"
+        className="group block h-full rounded-xl border border-ink/8 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-ink/12 hover:-translate-y-1"
       >
-        <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-accent/10 text-brand-accent transition-colors duration-300 group-hover:bg-brand-accent group-hover:text-white">
+        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-accent/10 text-brand-accent transition-all duration-300 group-hover:bg-brand-accent group-hover:text-white group-hover:scale-110">
           <IconComponent className="h-6 w-6" />
         </div>
         <h3 className="mt-5 text-lg font-heading font-bold text-ink">

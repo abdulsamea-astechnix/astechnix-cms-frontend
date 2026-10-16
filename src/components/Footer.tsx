@@ -8,6 +8,7 @@ import {
   footerServices,
   footerEngagement,
   footerCompany,
+  footerBlog,
   footerLegal,
   type NavItem,
 } from "../config/navigation";
@@ -54,6 +55,7 @@ export function Footer() {
               <FooterColumn title="Services" items={footerServices} />
               <FooterColumn title="Engagement" items={footerEngagement} />
               <FooterColumn title="Company" items={footerCompany} />
+              <FooterColumn title="Blog" items={footerBlog} />
               <FooterColumn title="Legal" items={footerLegal} />
             </div>
           </div>

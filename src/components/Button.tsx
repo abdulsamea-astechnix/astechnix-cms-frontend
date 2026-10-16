@@ -8,19 +8,19 @@ type Size = "sm" | "md" | "lg";
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-brand-accent text-white hover:bg-brand-accent/90 active:bg-brand-accent/80",
+    "bg-brand-accent text-white hover:bg-brand-accent-dark active:bg-brand-accent-dark shadow-sm hover:shadow-md",
   secondary:
-    "bg-white text-brand-dark border border-ink/15 hover:border-brand-accent hover:text-brand-accent",
+    "bg-white text-brand-dark border border-ink/12 hover:border-brand-accent hover:text-brand-accent",
   ghost: "text-brand-dark hover:bg-surface",
   dark: "bg-brand-dark text-white hover:bg-brand-dark/90",
   "outline-white":
-    "bg-transparent text-white border border-white/25 hover:bg-white/10 hover:border-white/50",
+    "bg-transparent text-white border border-white/25 hover:bg-white/10 hover:border-white/40",
 };
 
 const sizes: Record<Size, string> = {
-  sm: "px-4 py-2 text-sm rounded-md",
-  md: "px-6 py-3 text-sm rounded-md",
-  lg: "px-7 py-3.5 text-base rounded-md",
+  sm: "px-4 py-2 text-sm rounded-lg",
+  md: "px-6 py-3 text-sm rounded-lg",
+  lg: "px-7 py-3.5 text-base rounded-lg",
 };
 
 interface CommonProps {
@@ -64,7 +64,6 @@ export function Button({
 }: ButtonProps) {
   const classes = getClasses(variant, size, className);
 
-  // Handle Next.js internal links via 'to' prop
   if ("to" in props && props.to) {
     const { to, ...rest } = props as ButtonAsLink;
     return (
@@ -74,7 +73,6 @@ export function Button({
     );
   }
 
-  // Handle Next.js internal links via 'href' prop
   if ("href" in props && props.href) {
     const { href, ...rest } = props as ButtonAsLink;
     return (
@@ -84,7 +82,6 @@ export function Button({
     );
   }
 
-  // Handle external anchor links
   if ("externalHref" in props && props.externalHref) {
     const { externalHref, ...rest } = props as ButtonAsAnchor;
     return (
@@ -94,7 +91,6 @@ export function Button({
     );
   }
 
-  // Handle standard HTML button
   return (
     <button
       className={classes}

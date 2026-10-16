@@ -32,20 +32,6 @@ export const navigation: NavGroup[] = [
       },
     ],
   },
-  // {
-  //   label: "Delivery Model",
-  //   path: "/delivery-model",
-  //   children: [
-  //     {
-  //       label: "SLA Governance & Reporting",
-  //       path: "/delivery-model/sla-governance-reporting",
-  //     },
-  //     {
-  //       label: "Security, Compliance & IP Protection",
-  //       path: "/delivery-model/security-compliance-ip-protection",
-  //     },
-  //   ],
-  // },
   {
     label: "Engagement",
     path: "/engagement",
@@ -55,6 +41,10 @@ export const navigation: NavGroup[] = [
         path: "/engagement/pricing-and-contracts",
       },
     ],
+  },
+  {
+    label: "Blog",
+    path: "/blog",
   },
   {
     label: "Company",
@@ -86,17 +76,6 @@ export const footerServices: NavItem[] = [
   },
 ];
 
-export const footerDeliveryModel: NavItem[] = [
-  {
-    label: "SLA Governance & Reporting",
-    path: "/delivery-model/sla-governance-reporting",
-  },
-  {
-    label: "Security, Compliance & IP Protection",
-    path: "/delivery-model/security-compliance-ip-protection",
-  },
-];
-
 export const footerEngagement: NavItem[] = [
   { label: "Pricing & Contracts", path: "/engagement/pricing-and-contracts" },
 ];
@@ -105,6 +84,10 @@ export const footerCompany: NavItem[] = [
   { label: "About", path: "/company/about" },
   { label: "Case Studies", path: "/company/case-studies" },
   { label: "Contact", path: "/contact" },
+];
+
+export const footerBlog: NavItem[] = [
+  { label: "All Articles", path: "/blog" },
 ];
 
 export const footerLegal: NavItem[] = [

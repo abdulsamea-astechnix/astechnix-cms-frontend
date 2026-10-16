@@ -39,12 +39,15 @@ export function HeroSection({
               loading="eager"
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/90 via-brand-dark/80 to-brand-dark/70" />
-          <div className="absolute inset-0 grid-pattern-dark opacity-30" />
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/92 via-brand-dark/82 to-brand-dark/65" />
+          <div className="absolute inset-0 grid-pattern-dark opacity-25" />
         </>
       )}
       {!hasImage && isDark && (
-        <div className="absolute inset-0 grid-pattern-dark opacity-50" />
+        <>
+          <div className="absolute inset-0 grid-pattern-dark opacity-40" />
+          <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-brand-accent/8 blur-3xl" />
+        </>
       )}
       <div className="container-content relative">
         <div
@@ -56,14 +59,16 @@ export function HeroSection({
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
             {eyebrow && (
-              <motion.p
+              <motion.div
                 initial={reducedMotion ? false : { opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-sm font-semibold uppercase tracking-[0.15em] mb-5 text-brand-accent"
+                className="mb-5"
               >
-                {eyebrow}
-              </motion.p>
+                <span className="inline-flex items-center gap-2 rounded-full bg-brand-accent/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-brand-accent">
+                  {eyebrow}
+                </span>
+              </motion.div>
             )}
             <motion.h1
               initial={reducedMotion ? false : { opacity: 0, y: 20 }}

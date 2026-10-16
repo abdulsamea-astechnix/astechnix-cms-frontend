@@ -32,7 +32,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
                   {item.label}
                 </span>
               )}
-              {!isLast && <span className="text-white/30">/</span>}
+              {!isLast && <span className="text-white/25">/</span>}
             </li>
           );
         })}
@@ -68,11 +68,14 @@ export function PageHeader({
               loading="eager"
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/95 via-brand-dark/85 to-brand-dark/75" />
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/95 via-brand-dark/85 to-brand-dark/70" />
         </>
       )}
       {!backgroundImage && (
-        <div className="absolute inset-0 grid-pattern-dark opacity-30" />
+        <>
+          <div className="absolute inset-0 grid-pattern-dark opacity-25" />
+          <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-brand-accent/8 blur-3xl" />
+        </>
       )}
       <div className="container-content relative py-14 md:py-24">
         <Breadcrumbs items={breadcrumbs} />
