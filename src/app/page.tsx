@@ -67,11 +67,9 @@ export default function Home() {
         description="We help organizations keep their remote workstations secure, cloud environments stable, and day-to-day operations running smoothly without the usual overhead."
       >
         {/* Updated Button wrapping Next.js Link or utilizing standard routes */}
-        <Link href="/contact">
-          <Button href="/contact" size="lg">
-            Get in Touch <ArrowRight className="h-4 w-4" />
-          </Button>
-        </Link>
+        <Button href="/contact" size="lg">
+          Get in Touch <ArrowRight className="h-4 w-4" />
+        </Button>
         <Button
           onClick={() => {
             const element = document.getElementById("core-services");

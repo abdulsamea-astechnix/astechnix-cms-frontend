@@ -60,7 +60,7 @@ export function HeroSection({
                 initial={reducedMotion ? false : { opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className={`text-sm font-semibold uppercase tracking-[0.15em] mb-5 ${isDark ? "text-brand-accent-light" : "text-brand-accent"}`}
+                className="text-sm font-semibold uppercase tracking-[0.15em] mb-5 text-brand-accent"
               >
                 {eyebrow}
               </motion.p>

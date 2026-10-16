@@ -31,21 +31,28 @@ interface CommonProps {
 }
 
 type ButtonAsButton = CommonProps &
-  Omit<ButtonHTMLAttributes<HTMLButtonElement>, "children" | "className">;
+  Omit<ButtonHTMLAttributes<HTMLButtonElement>, "children" | "className"> & {
+    href?: never;
+    to?: never;
+    externalHref?: never;
+  };
 
-interface ButtonAsLink extends CommonProps {
-  href: string; // Updated from 'to' to standard Next.js href naming convention if desired, keeping backwards compatibility below
+type ButtonAsLink = CommonProps & {
+  href?: string;
   to?: string;
-}
+  externalHref?: never;
+} & Omit<React.ComponentPropsWithoutRef<typeof Link>, "href">;
 
-interface ButtonAsAnchor extends CommonProps {
+type ButtonAsAnchor = CommonProps & {
   externalHref: string;
-}
+  href?: never;
+  to?: never;
+} & Omit<React.ComponentPropsWithoutRef<"a">, "href">;
 
 type ButtonProps = ButtonAsButton | ButtonAsLink | ButtonAsAnchor;
 
 function getClasses(variant: Variant, size: Size, className: string): string {
-  return `btn ${variants[variant]} ${sizes[size]} ${className}`;
+  return `btn ${variants[variant]} ${sizes[size]} ${className}`.trim();
 }
 
 export function Button({
@@ -57,30 +64,37 @@ export function Button({
 }: ButtonProps) {
   const classes = getClasses(variant, size, className);
 
+  // Handle Next.js internal links via 'to' prop
   if ("to" in props && props.to) {
+    const { to, ...rest } = props as ButtonAsLink;
     return (
-      <Link href={props.to} className={classes}>
+      <Link href={to as string} className={classes} {...rest}>
         {children}
       </Link>
     );
   }
 
+  // Handle Next.js internal links via 'href' prop
   if ("href" in props && props.href) {
+    const { href, ...rest } = props as ButtonAsLink;
     return (
-      <Link href={props.href} className={classes}>
+      <Link href={href as string} className={classes} {...rest}>
         {children}
       </Link>
     );
   }
 
+  // Handle external anchor links
   if ("externalHref" in props && props.externalHref) {
+    const { externalHref, ...rest } = props as ButtonAsAnchor;
     return (
-      <a href={props.externalHref} className={classes}>
+      <a href={externalHref} className={classes} {...rest}>
         {children}
       </a>
     );
   }
 
+  // Handle standard HTML button
   return (
     <button
       className={classes}
@@ -92,5 +106,5 @@ export function Button({
 }
 
 export function SecondaryButton(props: Omit<ButtonProps, "variant">) {
-  return <Button variant="secondary" {...props} />;
+  return <Button variant="secondary" {...(props as ButtonProps)} />;
 }
