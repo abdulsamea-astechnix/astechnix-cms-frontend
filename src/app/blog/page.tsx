@@ -4,6 +4,7 @@ import { CTASection } from "@/components/CTASection";
 import { Button } from "@/components/Button";
 import { getAllPosts, type BlogPostSummary } from "@/sanity/queries";
 import { ArrowRight, Clock, Calendar } from "lucide-react";
+import Link from "next/link";
 
 export const revalidate = 60;
 
@@ -118,9 +119,9 @@ function FeaturedCard({ post }: { post: BlogPostSummary }) {
             ))}
           </div>
           <h2 className="heading-2 text-ink mb-4">
-            <a href={`/blog/${post.slug}`} className="hover:text-brand-accent transition-colors">
+            <Link href={`/blog/${post.slug}`} className="hover:text-brand-accent transition-colors">
               {post.title}
-            </a>
+            </Link>
           </h2>
           <p className="text-body mb-6">{post.excerpt}</p>
           <div className="flex items-center gap-4 text-sm text-ink-muted">
@@ -134,13 +135,13 @@ function FeaturedCard({ post }: { post: BlogPostSummary }) {
               {post.estimatedReadingTime} min read
             </span>
           </div>
-          <a
+          <Link
             href={`/blog/${post.slug}`}
             className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-accent hover:gap-3 transition-all"
           >
             Read article
             <ArrowRight className="h-4 w-4" />
-          </a>
+          </Link>
         </div>
         <div className="relative min-h-[280px] bg-gradient-to-br from-brand-dark to-brand-dark/70 lg:min-h-full">
           <div className="absolute inset-0 grid-pattern-dark opacity-30" />
@@ -168,9 +169,9 @@ function PostCard({ post }: { post: BlogPostSummary }) {
         ))}
       </div>
       <h3 className="text-lg font-heading font-bold text-ink leading-snug">
-        <a href={`/blog/${post.slug}`} className="hover:text-brand-accent transition-colors">
+        <Link href={`/blog/${post.slug}`} className="hover:text-brand-accent transition-colors">
           {post.title}
-        </a>
+        </Link>
       </h3>
       <p className="mt-3 text-sm text-ink-soft leading-[1.7] flex-1">
         {post.excerpt}
