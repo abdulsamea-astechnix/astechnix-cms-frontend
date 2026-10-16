@@ -1,6 +1,12 @@
 "use client";
 
-import { useState, useEffect, useRef, type KeyboardEvent } from "react";
+import {
+  Suspense,
+  useState,
+  useEffect,
+  useRef,
+  type KeyboardEvent,
+} from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
@@ -12,6 +18,32 @@ import { Logo } from "./Logo";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 
 export function Header() {
+  return (
+    <Suspense fallback={<HeaderFallback />}>
+      <HeaderContent />
+    </Suspense>
+  );
+}
+
+function HeaderFallback() {
+  return (
+    <header className="sticky top-0 z-50 w-full border-b border-transparent bg-white/95 backdrop-blur-md">
+      <div className="container-content">
+        <div className="flex h-16 items-center justify-between lg:h-[72px]">
+          <Link
+            href="/"
+            className="flex items-center shrink-0"
+            aria-label="AStechnix home"
+          >
+            <Logo className="h-8 w-auto lg:h-9" />
+          </Link>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+function HeaderContent() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
@@ -21,6 +53,7 @@ export function Header() {
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 8);
     handler();
+
     window.addEventListener("scroll", handler, { passive: true });
     return () => window.removeEventListener("scroll", handler);
   }, []);
@@ -32,6 +65,7 @@ export function Header() {
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
+
     return () => {
       document.body.style.overflow = "";
     };
@@ -44,6 +78,7 @@ export function Header() {
         else if (openMenu) setOpenMenu(null);
       }
     };
+
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
   }, [mobileOpen, openMenu]);
@@ -79,6 +114,7 @@ export function Header() {
               >
                 Contact Us
               </Link>
+
               <a
                 href={company.phoneHref}
                 className="btn-primary inline-flex items-center gap-2 whitespace-nowrap text-xs xl:text-sm px-3 py-2 xl:px-4 xl:py-2.5 shrink-0"
@@ -99,6 +135,7 @@ export function Header() {
           </div>
         </div>
       </header>
+
       <MobileNavigation
         open={mobileOpen}
         onClose={() => setMobileOpen(false)}
@@ -132,7 +169,8 @@ function DesktopNavigation({
         const isOpen = openMenu === group.label;
         const isActive =
           currentPath === group.path ||
-          (hasChildren && group.children!.some((c) => currentPath === c.path));
+          (hasChildren &&
+            group.children!.some((child) => currentPath === child.path));
 
         return (
           <div
@@ -171,13 +209,17 @@ function DesktopNavigation({
                 {group.label}
               </Link>
             )}
+
             <AnimatePresence>
               {hasChildren && isOpen && (
                 <motion.div
                   initial={reducedMotion ? false : { opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={reducedMotion ? undefined : { opacity: 0, y: 8 }}
-                  transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{
+                    duration: 0.2,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
                   className="absolute left-0 top-full z-50 min-w-[280px] xl:min-w-[300px] pt-3"
                   role="menu"
                 >
@@ -229,6 +271,7 @@ function MobileNavigation({
       const focusable = drawerRef.current.querySelector<HTMLElement>(
         "a, button, [tabindex]:not([tabindex='-1'])",
       );
+
       focusable?.focus();
     }
   }, [open]);
@@ -250,12 +293,16 @@ function MobileNavigation({
             onClick={onClose}
             aria-hidden="true"
           />
+
           <motion.div
             ref={drawerRef}
             initial={reducedMotion ? false : { x: "100%" }}
             animate={{ x: 0 }}
             exit={reducedMotion ? undefined : { x: "100%" }}
-            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            transition={{
+              duration: 0.3,
+              ease: [0.22, 1, 0.36, 1],
+            }}
             className="fixed right-0 top-0 z-50 h-full w-[340px] max-w-[88vw] overflow-y-auto bg-white shadow-2xl lg:hidden"
             role="dialog"
             aria-modal="true"
@@ -272,18 +319,21 @@ function MobileNavigation({
                 <X className="h-5 w-5" />
               </button>
             </div>
+
             <div className="px-3 py-4">
               {navigation.map((group) => (
                 <div key={group.label} className="mb-4">
                   <p className="px-3 py-2 text-xs font-semibold uppercase tracking-[0.15em] text-ink-muted">
                     {group.label}
                   </p>
+
                   {group.children ? (
                     <div className="space-y-0.5">
                       {group.children.map((child) => (
                         <Link
                           key={child.path}
                           href={child.path}
+                          onClick={onClose}
                           className={`block rounded-md px-3 py-2.5 text-sm transition-colors ${
                             currentPath === child.path
                               ? "bg-brand-accent/10 font-semibold text-brand-accent"
@@ -297,6 +347,7 @@ function MobileNavigation({
                   ) : (
                     <Link
                       href={group.path}
+                      onClick={onClose}
                       className={`block rounded-md px-3 py-2.5 text-sm transition-colors ${
                         currentPath === group.path
                           ? "bg-brand-accent/10 font-semibold text-brand-accent"
@@ -308,13 +359,16 @@ function MobileNavigation({
                   )}
                 </div>
               ))}
+
               <div className="mt-6 border-t border-ink/10 pt-4">
                 <Link
                   href={ctaConfig.primary.path}
+                  onClick={onClose}
                   className="btn-primary w-full text-center block py-2.5"
                 >
                   {ctaConfig.primary.label}
                 </Link>
+
                 <div className="mt-4 space-y-2 text-sm">
                   <a
                     href={company.phoneHref}
@@ -322,6 +376,7 @@ function MobileNavigation({
                   >
                     {company.phoneDisplay}
                   </a>
+
                   <a
                     href={company.emailHref}
                     className="block text-ink-soft hover:text-brand-accent transition-colors"
