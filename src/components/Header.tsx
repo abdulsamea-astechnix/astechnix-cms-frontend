@@ -18,6 +18,13 @@ import { Logo } from "./Logo";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 
 export function Header() {
+  const pathname = usePathname() ?? "";
+
+  // Completely hide the site header when viewing Sanity Studio
+  if (pathname.startsWith("/studio")) {
+    return null;
+  }
+
   return (
     <Suspense fallback={<HeaderFallback />}>
       <HeaderContent />
