@@ -7,7 +7,7 @@ import { getPostBySlug, getAllPostSlugs } from "@/sanity/queries";
 import { ArrowLeft, Clock, Calendar } from "lucide-react";
 import Link from "next/link";
 
-export const revalidate = 60;
+// export const revalidate = 60;
 
 export async function generateStaticParams() {
   try {
