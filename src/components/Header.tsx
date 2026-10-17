@@ -18,13 +18,6 @@ import { Logo } from "./Logo";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 
 export function Header() {
-  const pathname = usePathname() ?? "";
-
-  // Completely hide the site header when viewing Sanity Studio
-  if (pathname.startsWith("/studio")) {
-    return null;
-  }
-
   return (
     <Suspense fallback={<HeaderFallback />}>
       <HeaderContent />
@@ -54,8 +47,15 @@ function HeaderContent() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
+
+  // Safely grab pathname; returns null during SSR/prerender to prevent build crashes
   const pathname = usePathname() ?? "";
   const reducedMotion = useReducedMotion();
+
+  // Completely hide the site header when viewing Sanity Studio
+  if (pathname.startsWith("/studio")) {
+    return null;
+  }
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 8);
