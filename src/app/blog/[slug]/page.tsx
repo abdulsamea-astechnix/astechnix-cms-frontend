@@ -12,6 +12,12 @@ import Link from "next/link";
 export async function generateStaticParams() {
   try {
     const slugs = await getAllPostSlugs();
+    // Fallback: If no posts exist yet, return a dummy param
+    // to satisfy Next.js Cache Components build requirements
+    if (!slugs || slugs.length === 0) {
+      return [{ slug: "placeholder" }];
+    }
+
     return slugs.map((slug) => ({ slug }));
   } catch {
     return [];
