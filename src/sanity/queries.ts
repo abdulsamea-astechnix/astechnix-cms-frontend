@@ -1,5 +1,5 @@
 import { client } from "./lib/client";
-import { cacheLife } from "next/cache";
+import { cacheLife, cacheTag } from "next/cache";
 
 export interface BlogPostSummary {
   _id: string;
@@ -84,7 +84,8 @@ const postFields = `
 
 export async function getAllPosts(): Promise<BlogPostSummary[]> {
   "use cache";
-  cacheLife("hours");
+  cacheLife("minutes");
+  cacheTag("posts");
 
   const query = `*[_type == "post" && defined(publishedAt)] | order(publishedAt desc) {
     ${postFields}
@@ -122,7 +123,9 @@ export async function getPostBySlug(
   slug: string,
 ): Promise<BlogPostFull | null> {
   "use cache";
-  cacheLife("hours");
+  cacheLife("minutes");
+  cacheTag(`post-${slug}`);
+
   const query = `*[_type == "post" && slug.current == $slug && defined(publishedAt)][0] {
     ${postFields}
   }`;
@@ -158,7 +161,8 @@ export async function getPostBySlug(
 
 export async function getAllPostSlugs(): Promise<string[]> {
   "use cache";
-  cacheLife("hours");
+  cacheLife("minutes");
+  cacheTag("posts-slugs");
 
   const query = `*[_type == "post" && defined(publishedAt) && defined(slug.current)].slug.current`;
   return client.fetch<string[]>(query);
