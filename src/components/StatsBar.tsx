@@ -16,7 +16,7 @@ export function StatsBar({ points, variant = "light" }: StatsBarProps) {
 
   return (
     <section
-      className={`${isTainted ? "bg-canvas" : isDark ? "bg-brand-dark text-white" : "bg-white border-y border-ink/8"}`}
+      className={`${isTainted ? "bg-card" : isDark ? "bg-brand-dark text-ink" : "bg-card border-y border-border"}`}
     >
       <div className="container-content">
         <div className="grid grid-cols-2 gap-8 py-12 md:grid-cols-4 md:py-16">
@@ -34,15 +34,15 @@ export function StatsBar({ points, variant = "light" }: StatsBarProps) {
               className="text-center md:text-left"
             >
               <p
-                className={`font-heading text-4xl font-extrabold tracking-tight md:text-5xl ${isDark ? "text-white" : "text-brand-dark"}`}
+                className={`font-heading text-4xl font-extrabold tracking-tight tabular-nums md:text-5xl ${isDark ? "text-ink" : "text-ink"}`}
               >
                 {point.value}
                 {point.suffix && (
-                  <span className="text-brand-accent">{point.suffix}</span>
+                  <span className="text-primary">{point.suffix}</span>
                 )}
               </p>
               <p
-                className={`mt-2 text-sm ${isDark ? "text-white/55" : "text-ink-muted"}`}
+                className={`mt-2 text-sm ${isDark ? "text-ink-soft" : "text-ink-muted"}`}
               >
                 {point.label}
               </p>

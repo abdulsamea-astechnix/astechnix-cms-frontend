@@ -15,7 +15,7 @@ interface BreadcrumbsProps {
 export function Breadcrumbs({ items }: BreadcrumbsProps) {
   return (
     <nav aria-label="Breadcrumb" className="mb-6">
-      <ol className="flex flex-wrap items-center gap-2 text-sm text-white/50">
+      <ol className="flex flex-wrap items-center gap-2 text-sm text-ink-muted">
         {items.map((item, index) => {
           const isLast = index === items.length - 1;
           return (
@@ -23,16 +23,16 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
               {item.path && !isLast ? (
                 <Link
                   href={item.path}
-                  className="hover:text-brand-accent-light transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   {item.label}
                 </Link>
               ) : (
-                <span className={isLast ? "text-white font-medium" : ""}>
+                <span className={isLast ? "text-ink font-medium" : ""}>
                   {item.label}
                 </span>
               )}
-              {!isLast && <span className="text-white/25">/</span>}
+              {!isLast && <span className="text-ink-muted/50">/</span>}
             </li>
           );
         })}
@@ -68,20 +68,20 @@ export function PageHeader({
               loading="eager"
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/95 via-brand-dark/85 to-brand-dark/70" />
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/95 via-brand-dark/88 to-brand-dark/75" />
         </>
       )}
       {!backgroundImage && (
         <>
-          <div className="absolute inset-0 grid-pattern-dark opacity-25" />
-          <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-brand-accent/8 blur-3xl" />
+          <div className="absolute inset-0 grid-pattern-lime opacity-25" />
+          <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-primary/8 blur-3xl" />
         </>
       )}
       <div className="container-content relative py-14 md:py-24">
         <Breadcrumbs items={breadcrumbs} />
-        <h1 className="heading-1 text-white max-w-3xl">{title}</h1>
+        <h1 className="heading-1 text-ink max-w-3xl">{title}</h1>
         {description && (
-          <p className="text-lead mt-5 text-white/70 max-w-2xl">
+          <p className="text-lead mt-5 text-ink-soft max-w-2xl">
             {description}
           </p>
         )}

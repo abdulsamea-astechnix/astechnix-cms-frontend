@@ -88,7 +88,7 @@ export function ServicePageTemplate({
         <p className="text-body">{businessProblem}</p>
       </ImageContentSection>
 
-      <section className="section-padding bg-white border-y border-ink/10">
+      <section className="section-padding bg-background border-y border-border">
         <div className="container-content">
           <SectionHeader
             eyebrow="Our Responsibility"
@@ -113,7 +113,7 @@ export function ServicePageTemplate({
         </div>
       </section>
 
-      <section className="section-padding bg-canvas">
+      <section className="section-padding bg-card">
         <div className="container-content">
           <SectionHeader
             eyebrow="Capabilities"
@@ -136,7 +136,7 @@ export function ServicePageTemplate({
         </div>
       </section>
 
-      <section className="section-padding bg-white border-y border-ink/10">
+      <section className="section-padding bg-background border-y border-border">
         <div className="container-content max-w-3xl">
           <SectionHeader
             eyebrow="Scope"
@@ -154,7 +154,7 @@ export function ServicePageTemplate({
                 key={item}
                 className="flex items-start gap-3 text-base text-ink-soft"
               >
-                <Check className="mt-0.5 h-5 w-5 shrink-0 text-brand-accent" />
+                <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                 {item}
               </li>
             ))}
@@ -162,7 +162,7 @@ export function ServicePageTemplate({
         </div>
       </section>
 
-      <section className="section-padding bg-canvas">
+      <section className="section-padding bg-card">
         <div className="container-content">
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
             <div>
@@ -202,7 +202,7 @@ export function ServicePageTemplate({
                   },
                 ].map((item) => (
                   <div key={item.label} className="flex gap-3">
-                    <span className="badge bg-brand-accent/10 text-brand-accent shrink-0">
+                    <span className="badge border border-primary/20 bg-primary/10 text-primary shrink-0">
                       {item.label}
                     </span>
                     <p className="text-sm text-ink-soft">{item.desc}</p>
@@ -214,7 +214,7 @@ export function ServicePageTemplate({
         </div>
       </section>
 
-      <section className="section-padding bg-white border-y border-ink/10">
+      <section className="section-padding bg-background border-y border-border">
         <div className="container-content">
           <SectionHeader
             eyebrow="Technology"
@@ -230,7 +230,7 @@ export function ServicePageTemplate({
         </div>
       </section>
 
-      <section className="section-padding bg-canvas">
+      <section className="section-padding bg-card">
         <div className="container-content">
           <SectionHeader
             eyebrow="Delivery Process"
@@ -246,7 +246,7 @@ export function ServicePageTemplate({
         </div>
       </section>
 
-      <section className="section-padding bg-white border-y border-ink/10">
+      <section className="section-padding bg-background border-y border-border">
         <div className="container-content">
           <SectionHeader
             eyebrow="Security"
@@ -270,7 +270,7 @@ export function ServicePageTemplate({
         </div>
       </section>
 
-      <section className="section-padding bg-canvas">
+      <section className="section-padding bg-card">
         <div className="container-content max-w-3xl">
           <SectionHeader
             eyebrow="FAQ"
@@ -286,7 +286,7 @@ export function ServicePageTemplate({
         </div>
       </section>
 
-      <section className="section-padding bg-white border-t border-ink/10">
+      <section className="section-padding bg-background border-t border-border">
         <div className="container-content">
           <SectionHeader
             eyebrow="Related"

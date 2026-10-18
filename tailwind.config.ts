@@ -4,23 +4,45 @@ export default {
   theme: {
     extend: {
       colors: {
-        "brand-dark": "#23374D",
-        "brand-accent": "#1089FF",
-        "brand-accent-light": "#3BA0FF",
-        surface: "#C5D2E0",
-        canvas: "#D8E3EE",
+        background: "hsl(222, 24%, 10%)",
+        foreground: "hsl(210, 18%, 94%)",
+        primary: {
+          DEFAULT: "hsl(84, 78%, 56%)",
+          foreground: "hsl(222, 26%, 8%)",
+          dark: "hsl(84, 70%, 46%)",
+          light: "hsl(84, 82%, 66%)",
+        },
+        card: {
+          DEFAULT: "hsl(222, 22%, 13%)",
+          elevated: "hsl(222, 20%, 17%)",
+        },
+        surface: "hsl(222, 20%, 16%)",
+        border: {
+          DEFAULT: "hsl(222, 18%, 20%)",
+          light: "hsl(222, 16%, 24%)",
+        },
+        muted: {
+          DEFAULT: "hsl(215, 10%, 56%)",
+          foreground: "hsl(215, 10%, 56%)",
+        },
+        "brand-dark": "hsl(222, 24%, 10%)",
+        "brand-accent": "hsl(84, 78%, 56%)",
+        "brand-accent-light": "hsl(84, 82%, 66%)",
+        "brand-accent-dark": "hsl(84, 70%, 46%)",
+        canvas: "hsl(222, 24%, 10%)",
         ink: {
-          DEFAULT: "#1A2332",
-          soft: "#3D4F63",
-          muted: "#6B7B8C",
+          DEFAULT: "hsl(210, 18%, 94%)",
+          soft: "hsl(210, 12%, 70%)",
+          muted: "hsl(215, 10%, 52%)",
         },
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        heading: ["'Plus Jakarta Sans'", "system-ui", "sans-serif"],
+        sans: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
+        heading: ["var(--font-jakarta)", "'Plus Jakarta Sans'", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "JetBrains Mono", "ui-monospace", "monospace"],
       },
       maxWidth: {
-        content: "1280px",
+        content: "1200px",
         prose: "720px",
         wide: "1440px",
       },
@@ -39,18 +61,14 @@ export default {
       },
       fontSize: {
         display: ["3.5rem", { lineHeight: "1.05", letterSpacing: "-0.03em" }],
-        "display-lg": [
-          "4.5rem",
-          { lineHeight: "1.05", letterSpacing: "-0.03em" },
-        ],
+        "display-lg": ["4.5rem", { lineHeight: "1.05", letterSpacing: "-0.03em" }],
       },
       transitionTimingFunction: {
         enterprise: "cubic-bezier(0.22, 1, 0.36, 1)",
       },
       boxShadow: {
-        card: "0 1px 3px 0 rgba(35, 55, 77, 0.06), 0 1px 2px 0 rgba(35, 55, 77, 0.04)",
-        "card-hover":
-          "0 8px 24px 0 rgba(35, 55, 77, 0.10), 0 2px 6px 0 rgba(35, 55, 77, 0.06)",
+        card: "0 1px 3px 0 rgba(0, 0, 0, 0.2)",
+        "card-hover": "0 12px 28px -4px rgba(0, 0, 0, 0.3), 0 4px 10px -2px rgba(0, 0, 0, 0.2)",
       },
     },
   },

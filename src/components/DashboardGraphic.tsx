@@ -10,24 +10,24 @@ export function DashboardGraphic() {
   const bars = [68, 82, 74, 90, 78, 95];
 
   return (
-    <div className="relative w-full rounded-2xl border border-white/10 bg-brand-dark/80 p-6 shadow-2xl backdrop-blur-md md:p-8">
+    <div className="relative w-full rounded-2xl border border-border bg-card p-6 shadow-2xl backdrop-blur-md md:p-8">
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.15em] text-brand-accent-light">
+          <p className="eyebrow">
             AStechnix Outsourcing Hub
           </p>
-          <p className="mt-1 font-heading text-lg font-bold text-white">
+          <p className="mt-1 font-heading text-lg font-bold text-ink">
             Operational Business Metrics
           </p>
         </div>
-        <div className="flex items-center gap-2 rounded-full bg-emerald-500/15 px-3 py-1.5">
+        <div className="flex items-center gap-2 rounded-full border border-success/20 bg-success/10 px-3 py-1.5">
           <span className="relative flex h-2 w-2">
             {!reducedMotion && (
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-75" />
             )}
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-success" />
           </span>
-          <span className="text-xs font-semibold text-emerald-300">
+          <span className="text-xs font-semibold text-success">
             All Systems Operational
           </span>
         </div>
@@ -54,12 +54,12 @@ export function DashboardGraphic() {
         />
       </div>
 
-      <div className="mt-6 rounded-xl border border-white/10 bg-brand-dark/40 p-5">
+      <div className="mt-6 rounded-xl border border-border bg-surface p-5">
         <div className="flex items-center justify-between">
-          <p className="text-sm font-semibold text-white/80">
+          <p className="text-sm font-semibold text-ink-soft">
             Turnkey Project Velocity
           </p>
-          <p className="text-xs text-white/40">
+          <p className="text-xs text-ink-muted">
             Delivery Sprints (Last 6 months)
           </p>
         </div>
@@ -75,7 +75,7 @@ export function DashboardGraphic() {
                 delay: i * 0.08,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className={`flex-1 rounded-t-sm ${h > 90 ? "bg-brand-accent" : "bg-brand-accent/40"}`}
+              className={`flex-1 rounded-t-sm ${h > 90 ? "bg-primary" : "bg-primary/40"}`}
             />
           ))}
         </div>
@@ -109,17 +109,17 @@ function StatCard({
   subtext: string;
 }) {
   return (
-    <div className="min-w-0 rounded-xl border border-white/10 bg-brand-dark/40 p-3.5 sm:p-4">
-      <div className="flex items-center gap-2 text-brand-accent-light shrink-0">
+    <div className="min-w-0 rounded-xl border border-border bg-surface p-3.5 sm:p-4">
+      <div className="flex items-center gap-2 text-primary shrink-0">
         {icon}
       </div>
-      <p className="mt-2 font-heading text-xl sm:text-2xl font-extrabold text-white tracking-tight leading-tight break-words">
+      <p className="mt-2 font-heading text-xl sm:text-2xl font-extrabold text-ink tracking-tight tabular-nums leading-tight break-words">
         {value}
       </p>
-      <p className="mt-1 text-xs text-white/70 leading-normal break-words">
+      <p className="mt-1 text-xs text-ink-soft leading-normal break-words">
         {label}
       </p>
-      <p className="mt-0.5 text-[10px] sm:text-xs font-medium text-brand-accent-light/70 leading-tight break-words">
+      <p className="mt-0.5 text-[10px] sm:text-xs font-medium text-primary/70 leading-tight break-words">
         {subtext}
       </p>
     </div>
@@ -136,22 +136,22 @@ function IncidentRow({
   subtext: string;
 }) {
   return (
-    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-3 rounded-lg border border-white/10 bg-brand-dark/30 px-3.5 py-3 min-w-0">
+    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-3 rounded-lg border border-border bg-surface px-3.5 py-3 min-w-0">
       <div className="min-w-0">
         <p
-          className="text-xs text-white/70 leading-snug truncate"
+          className="text-xs text-ink-soft leading-snug truncate"
           title={label}
         >
           {label}
         </p>
         <p
-          className="text-[10px] text-brand-accent-light/60 truncate"
+          className="text-[10px] text-ink-muted truncate"
           title={subtext}
         >
           {subtext}
         </p>
       </div>
-      <span className="shrink-0 text-sm font-semibold text-white sm:text-right">
+      <span className="shrink-0 text-sm font-semibold text-ink tabular-nums sm:text-right">
         {value}
       </span>
     </div>

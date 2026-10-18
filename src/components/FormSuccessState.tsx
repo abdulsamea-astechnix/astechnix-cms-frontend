@@ -28,14 +28,14 @@ export function FormSuccessState({
 
   return (
     <div ref={containerRef} className="py-2 text-center scroll-mt-20">
-      <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+      <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full border border-success/20 bg-success/10 text-success">
         <CheckCircle2 className="h-5 w-5" />
       </div>
 
       <h3 className="mt-2 text-lg font-bold text-ink">{title}</h3>
       <p className="mt-0.5 text-xs text-ink-soft leading-tight">{subtitle}</p>
 
-      <div className="mt-4 rounded-xl bg-slate-50 p-3.5 border border-slate-100">
+      <div className="mt-4 rounded-xl border border-border bg-surface p-3.5">
         <p className="text-xs font-semibold text-ink">
           Need an urgent response? Skip the wait:
         </p>
@@ -45,7 +45,7 @@ export function FormSuccessState({
             href="https://wa.me/919004575425"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 rounded-lg bg-emerald-600 px-3 py-2 text-xs font-semibold text-white transition hover:bg-emerald-700"
+            className="flex items-center justify-center gap-2 rounded-lg border border-success/30 bg-success/10 px-3 py-2 text-xs font-semibold text-success transition hover:bg-success/20"
           >
             <MessageSquare className="h-3.5 w-3.5" />
             Chat on WhatsApp
@@ -53,7 +53,7 @@ export function FormSuccessState({
 
           <a
             href={company.phoneHref}
-            className="flex items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-ink transition hover:bg-slate-100"
+            className="flex items-center justify-center gap-2 rounded-lg border border-border bg-card px-3 py-1.5 text-xs font-semibold text-ink transition hover:bg-card-elevated"
           >
             <Phone className="h-3.5 w-3.5 text-ink-soft" />
             {company.phoneDisplay}
@@ -61,7 +61,7 @@ export function FormSuccessState({
 
           <a
             href={company.emailHref}
-            className="flex items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-ink transition hover:bg-slate-100"
+            className="flex items-center justify-center gap-2 rounded-lg border border-border bg-card px-3 py-1.5 text-xs font-semibold text-ink transition hover:bg-card-elevated"
           >
             <Mail className="h-3.5 w-3.5 text-ink-soft" />
             {company.email}
@@ -71,7 +71,7 @@ export function FormSuccessState({
 
       <button
         onClick={onReset}
-        className="mt-3 text-xs font-semibold text-brand-accent hover:underline"
+        className="mt-3 text-xs font-semibold text-primary hover:underline"
       >
         Request another estimate
       </button>

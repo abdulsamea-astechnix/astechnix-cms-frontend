@@ -34,17 +34,15 @@ export function SectionHeader({
       className={`max-w-2xl ${alignClass} ${className}`}
     >
       {eyebrow && (
-        <p
-          className={`text-sm font-semibold uppercase tracking-[0.12em] mb-4 ${isDark ? "text-brand-accent-light" : "text-brand-accent"}`}
-        >
+        <p className={`eyebrow mb-4 ${isDark ? "text-primary-light" : "text-primary"}`}>
           {eyebrow}
         </p>
       )}
-      <h2 className={`heading-2 ${isDark ? "text-white" : "text-ink"}`}>
+      <h2 className={`heading-2 text-ink`}>
         {title}
       </h2>
       {description && (
-        <p className={`text-lead mt-5 ${isDark ? "text-white/70" : ""}`}>
+        <p className={`text-lead mt-5 text-ink-soft`}>
           {description}
         </p>
       )}

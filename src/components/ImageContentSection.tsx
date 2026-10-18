@@ -27,7 +27,7 @@ export function ImageContentSection({
   const isTinted = variant === "tinted";
 
   return (
-    <section className={isTinted ? "bg-canvas" : "bg-white"}>
+    <section className={isTinted ? "bg-card" : "bg-background"}>
       <div className="container-content py-section-sm md:py-section">
         <div
           className={`grid items-center gap-10 lg:gap-16 lg:grid-cols-2 ${reverse ? "lg:grid-flow-dense" : ""}`}
@@ -41,14 +41,14 @@ export function ImageContentSection({
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className={reverse ? "lg:col-start-2" : ""}
           >
-            <div className="relative overflow-hidden rounded-xl shadow-card-hover">
+            <div className="relative overflow-hidden rounded-xl border border-border shadow-card-hover">
               <img
                 src={image}
                 alt={imageAlt}
                 className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-105"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/40 to-transparent" />
             </div>
           </motion.div>
 
@@ -62,7 +62,7 @@ export function ImageContentSection({
             className={reverse ? "lg:col-start-1 lg:row-start-1" : ""}
           >
             {eyebrow && (
-              <p className="text-sm font-semibold uppercase tracking-[0.15em] text-brand-accent mb-4">
+              <p className="eyebrow mb-4">
                 {eyebrow}
               </p>
             )}

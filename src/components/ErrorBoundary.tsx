@@ -23,7 +23,7 @@ export class ErrorBoundary extends Component<
   render() {
     if (this.state.hasError) {
       return (
-        <div className="flex min-h-screen flex-col items-center justify-center bg-canvas px-6 text-center">
+        <div className="flex min-h-screen flex-col items-center justify-center bg-background px-6 text-center">
           <h1 className="heading-2 text-ink">Something went wrong</h1>
           <p className="mt-3 text-body max-w-md">
             An unexpected error occurred. Please refresh the page or try again

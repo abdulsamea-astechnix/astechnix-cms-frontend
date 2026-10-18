@@ -45,7 +45,7 @@ const components = {
         return (
           <Link
             href={href}
-            className="text-brand-accent underline underline-offset-2 hover:text-brand-accent-dark"
+            className="text-primary underline underline-offset-2 hover:text-primary-light"
           >
             {children}
           </Link>
@@ -56,7 +56,7 @@ const components = {
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-brand-accent underline underline-offset-2 hover:text-brand-accent-dark"
+          className="text-primary underline underline-offset-2 hover:text-primary-light"
         >
           {children}
         </a>
@@ -85,7 +85,7 @@ const components = {
       </h4>
     ),
     blockquote: ({ children }: { children?: React.ReactNode }) => (
-      <blockquote className="border-l-[3px] border-brand-accent pl-5 my-6 italic text-ink-soft">
+      <blockquote className="border-l-[3px] border-primary pl-5 my-6 italic text-ink-soft">
         {children}
       </blockquote>
     ),

@@ -11,9 +11,9 @@ export default function NotFound() {
           description: "The page you are looking for could not be found.",
         }}
       />
-      <section className="flex min-h-[70vh] items-center justify-center bg-canvas px-6 py-20">
+      <section className="flex min-h-[70vh] items-center justify-center bg-card px-6 py-20">
         <div className="text-center">
-          <p className="font-heading text-7xl font-extrabold text-brand-accent md:text-8xl">
+          <p className="font-heading text-7xl font-extrabold text-primary tabular-nums md:text-8xl">
             404
           </p>
           <h1 className="heading-2 text-ink mt-4">Page not found</h1>

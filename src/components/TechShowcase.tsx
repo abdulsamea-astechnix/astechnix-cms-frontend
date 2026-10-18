@@ -15,13 +15,13 @@ export function TechShowcase({
 
   return (
     <div
-      className={`rounded-lg border p-8 md:p-10 ${isDark ? "border-white/10 bg-white/5" : "border-ink/10 bg-white"}`}
+      className={`rounded-lg border p-8 md:p-10 ${isDark ? "border-border bg-card-elevated" : "border-border bg-card"}`}
     >
       <div className="flex flex-wrap justify-center gap-8 sm:gap-10 lg:gap-14">
         {categories.map((cat) => (
           <div key={cat.category} className="text-center">
             <h4
-              className={`text-sm font-heading font-bold mb-4 ${isDark ? "text-white" : "text-ink"}`}
+              className={`text-sm font-heading font-bold mb-4 text-ink`}
             >
               {cat.category}
             </h4>
@@ -29,7 +29,7 @@ export function TechShowcase({
               {cat.items.map((item) => (
                 <span
                   key={item}
-                  className={`rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${isDark ? "bg-white/10 text-white/70" : "bg-white text-ink-soft border border-ink/10"}`}
+                  className={`rounded-md px-3 py-1.5 text-sm font-medium transition-colors border border-border bg-surface text-ink-soft hover:border-primary/30 hover:text-ink`}
                 >
                   {item}
                 </span>

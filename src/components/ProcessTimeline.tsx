@@ -38,12 +38,12 @@ export function ProcessTimeline({ steps }: ProcessTimelineProps) {
           }}
           className="relative flex flex-col items-center text-center"
         >
-          <span className="z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-dark text-sm font-heading font-bold text-white">
+          <span className="z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-primary/30 bg-primary/10 text-sm font-heading font-bold text-primary">
             {s.step}
           </span>
 
           {i < steps.length - 1 && (
-            <span className="absolute top-5 left-[calc(50%+20px)] z-0 hidden h-px w-[calc(100%-20px)] bg-ink/10 lg:block" />
+            <span className="absolute top-5 left-[calc(50%+20px)] z-0 hidden h-px w-[calc(100%-20px)] bg-border lg:block" />
           )}
 
           <h3 className="mt-5 text-base font-heading font-bold text-ink">

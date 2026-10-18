@@ -10,12 +10,12 @@ export function ClientLogos({ logos, variant = "light" }: ClientLogosProps) {
 
   return (
     <section
-      className={`${isDark ? "bg-brand-dark" : "bg-white border-y border-ink/10"}`}
+      className={`${isDark ? "bg-brand-dark" : "bg-card border-y border-border"}`}
     >
       <div className="container-content">
         <div className="py-8 md:py-10">
           <p
-            className={`text-center text-xs font-semibold uppercase tracking-[0.2em] mb-6 ${isDark ? "text-white/40" : "text-ink-muted"}`}
+            className={`text-center eyebrow mb-6 ${isDark ? "text-ink-muted" : "text-ink-muted"}`}
           >
             Trusted by
           </p>
@@ -23,7 +23,7 @@ export function ClientLogos({ logos, variant = "light" }: ClientLogosProps) {
             {logos.map((logo) => (
               <span
                 key={logo}
-                className={`font-heading text-lg font-bold tracking-tight transition-opacity duration-300 ${isDark ? "text-white/50 hover:text-white/80" : "text-ink-muted/60 hover:text-ink"}`}
+                className={`font-heading text-lg font-bold tracking-tight transition-opacity duration-300 ${isDark ? "text-ink-muted/60 hover:text-ink" : "text-ink-muted/60 hover:text-ink"}`}
               >
                 {logo}
               </span>

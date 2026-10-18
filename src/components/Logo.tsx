@@ -6,14 +6,14 @@ type LogoProps = SVGProps<SVGSVGElement> & {
 };
 
 const ICON_COLOR: Record<string, string> = {
-  dark: "#1089FF",
-  light: "#1089FF",
+  dark: "#b3e93a",
+  light: "#b3e93a",
   monochrome: "currentColor",
 };
 
 const TEXT_COLOR: Record<string, string> = {
-  dark: "#23374D",
-  light: "#FFFFFF",
+  dark: "#eceff3",
+  light: "#eceff3",
   monochrome: "currentColor",
 };
 

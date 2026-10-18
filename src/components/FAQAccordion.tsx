@@ -19,7 +19,7 @@ export function FAQAccordion({ items }: FAQAccordionProps) {
   const reducedMotion = useReducedMotion();
 
   return (
-    <div className="divide-y divide-ink/10 border-y border-ink/10">
+    <div className="divide-y divide-border border-y border-border">
       {items.map((item, index) => {
         const isOpen = openIndex === index;
         return (
@@ -33,7 +33,7 @@ export function FAQAccordion({ items }: FAQAccordionProps) {
                 {item.question}
               </span>
               <ChevronDown
-                className={`h-5 w-5 shrink-0 text-ink-muted transition-transform duration-300 ${isOpen ? "rotate-180 text-brand-accent" : ""}`}
+                className={`h-5 w-5 shrink-0 text-ink-muted transition-transform duration-300 ${isOpen ? "rotate-180 text-primary" : ""}`}
               />
             </button>
             <AnimatePresence initial={false}>
