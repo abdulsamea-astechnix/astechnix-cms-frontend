@@ -48,6 +48,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const gaId = process.env.NEXT_PUBLIC_GA_ID;
+
   return (
     <html
       lang="en"
@@ -141,10 +143,10 @@ export default function RootLayout({
           }}
         />
 
-        {/* Google Ads (gtag.js) & Phone Call Conversion */}
+        {/* Google Tag Manager / Analytics (gtag.js) & Google Ads */}
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=AW-18247449976"
+          src={`https://www.googletagmanager.com/gtag/js?id=${gaId || "AW-18247449976"}`}
         />
         <script
           dangerouslySetInnerHTML={{
@@ -152,6 +154,11 @@ export default function RootLayout({
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag("js", new Date());
+
+              /* Google Analytics 4 (Entire Website & Blog Tracking) */
+              ${gaId ? `gtag("config", "${gaId}");` : ""}
+
+              /* Google Ads & Phone Call Conversion */
               gtag("config", "AW-18247449976");
               gtag("config", "AW-18247449976/YBIuCIeayuMcEPj6h_1D", {
                 phone_conversion_number: "+91 90045 75425"
