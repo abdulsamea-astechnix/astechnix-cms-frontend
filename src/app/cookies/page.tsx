@@ -20,7 +20,7 @@ export default function Cookies() {
         description="How AStechnix uses cookies on this website."
       />
 
-      <section className="section-padding bg-canvas">
+      <section className="section-padding bg-card">
         <div className="container-content max-w-prose">
           <div className="space-y-6 text-body">
             <div>

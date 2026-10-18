@@ -236,7 +236,7 @@ export function ContactForm() {
             htmlFor="name"
             className="mb-1 block text-xs font-semibold text-ink"
           >
-            Full Name <span className="text-red-500">*</span>
+            Full Name <span className="text-error">*</span>
           </label>
           <input
             id="name"
@@ -251,7 +251,7 @@ export function ContactForm() {
             aria-describedby={errors.name ? "name-error" : undefined}
           />
           {errors.name && (
-            <p id="name-error" className="mt-0.5 text-xs text-red-500">
+            <p id="name-error" className="mt-0.5 text-xs text-error">
               {errors.name}
             </p>
           )}
@@ -262,7 +262,7 @@ export function ContactForm() {
             htmlFor="email"
             className="mb-1 block text-xs font-semibold text-ink"
           >
-            Work Email <span className="text-red-500">*</span>
+            Work Email <span className="text-error">*</span>
           </label>
           <input
             id="email"
@@ -277,7 +277,7 @@ export function ContactForm() {
             aria-describedby={errors.email ? "email-error" : undefined}
           />
           {errors.email && (
-            <p id="email-error" className="mt-0.5 text-xs text-red-500">
+            <p id="email-error" className="mt-0.5 text-xs text-error">
               {errors.email}
             </p>
           )}
@@ -288,7 +288,7 @@ export function ContactForm() {
             htmlFor="company"
             className="mb-1 block text-xs font-semibold text-ink"
           >
-            Company / Organisation Name <span className="text-red-500">*</span>
+            Company / Organisation Name <span className="text-error">*</span>
           </label>
           <input
             id="company"
@@ -303,7 +303,7 @@ export function ContactForm() {
             aria-describedby={errors.company ? "company-error" : undefined}
           />
           {errors.company && (
-            <p id="company-error" className="mt-0.5 text-xs text-red-500">
+            <p id="company-error" className="mt-0.5 text-xs text-error">
               {errors.company}
             </p>
           )}
@@ -314,7 +314,7 @@ export function ContactForm() {
             htmlFor="message"
             className="mb-1 block text-xs font-semibold text-ink"
           >
-            IT Support Requirements <span className="text-red-500">*</span>
+            IT Support Requirements <span className="text-error">*</span>
           </label>
           <textarea
             id="message"
@@ -328,7 +328,7 @@ export function ContactForm() {
             aria-describedby={errors.message ? "message-error" : undefined}
           />
           {errors.message && (
-            <p id="message-error" className="mt-0.5 text-xs text-red-500">
+            <p id="message-error" className="mt-0.5 text-xs text-error">
               {errors.message}
             </p>
           )}
@@ -337,9 +337,9 @@ export function ContactForm() {
         {status === "error" && submitError && (
           <div
             role="alert"
-            className="rounded-md border border-red-200 bg-red-50 p-3"
+            className="rounded-md border border-error/20 bg-error/10 p-3"
           >
-            <p className="text-xs text-red-600">{submitError}</p>
+            <p className="text-xs text-error">{submitError}</p>
           </div>
         )}
 

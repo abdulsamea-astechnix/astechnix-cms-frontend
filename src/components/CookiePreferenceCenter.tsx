@@ -172,7 +172,7 @@ export function CookiePreferenceCenter() {
             aria-modal="false"
             aria-labelledby="cookie-banner-title"
           >
-            <div className="mx-auto max-w-3xl rounded-xl border border-ink/10 bg-white shadow-card-hover sm:rounded-xl">
+            <div className="mx-auto max-w-3xl rounded-xl border border-border bg-card shadow-card-hover sm:rounded-xl">
               <div className="flex flex-col gap-3 p-3.5 sm:hidden">
                 <p className="text-xs text-ink-soft leading-snug">
                   We use essential cookies to run this site. With your
@@ -206,7 +206,7 @@ export function CookiePreferenceCenter() {
 
               <div className="hidden flex-col gap-3 p-4 sm:flex">
                 <div className="flex items-start gap-3">
-                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-accent/10 text-brand-accent">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
                     <Shield className="h-4.5 w-4.5" />
                   </div>
                   <div>
@@ -220,7 +220,7 @@ export function CookiePreferenceCenter() {
                     </p>
                   </div>
                 </div>
-                <div className="grid w-full grid-cols-3 gap-2 border-t border-ink/10 pt-3">
+                <div className="grid w-full grid-cols-3 gap-2 border-t border-border pt-3">
                   <button
                     onClick={handleAcceptAll}
                     className="btn-primary justify-center !px-5 !py-2 !text-sm"
@@ -274,9 +274,9 @@ export function CookiePreferenceCenter() {
                 reducedMotion ? undefined : { y: 30, opacity: 0, scale: 0.98 }
               }
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="flex max-h-[92vh] w-full flex-col overflow-hidden rounded-t-xl bg-white shadow-card-hover sm:max-w-2xl sm:rounded-xl"
+              className="flex max-h-[92vh] w-full flex-col overflow-hidden rounded-t-xl bg-card shadow-card-hover sm:max-w-2xl sm:rounded-xl"
             >
-              <div className="flex items-start justify-between gap-4 border-b border-ink/10 p-5 sm:p-6">
+              <div className="flex items-start justify-between gap-4 border-b border-border p-5 sm:p-6">
                 <div>
                   <h2 id="cookie-modal-title" className="heading-3 text-ink">
                     Cookie Preferences
@@ -296,7 +296,7 @@ export function CookiePreferenceCenter() {
               </div>
 
               <div className="flex-1 overflow-y-auto p-5 sm:p-6">
-                <div className="divide-y divide-ink/10 border-y border-ink/10">
+                <div className="divide-y divide-border border-y border-border">
                   {cookieCategories.map((cat) => {
                     const isOpen = openCategory === cat.id;
                     const isOn = choices[cat.id];
@@ -316,7 +316,7 @@ export function CookiePreferenceCenter() {
                               {cat.title}
                             </span>
                             {isLocked && (
-                              <span className="badge bg-brand-accent/10 text-brand-accent !px-2 !py-0.5 !text-[10px] text-center">
+                              <span className="badge bg-primary/10 text-primary !px-2 !py-0.5 !text-[10px] text-center">
                                 Always Active
                               </span>
                             )}
@@ -330,7 +330,7 @@ export function CookiePreferenceCenter() {
                             />
                             <ChevronDown
                               className={`h-5 w-5 shrink-0 text-ink-muted transition-transform duration-300 ${
-                                isOpen ? "rotate-180 text-brand-accent" : ""
+                                isOpen ? "rotate-180 text-primary" : ""
                               }`}
                             />
                           </div>
@@ -372,7 +372,7 @@ export function CookiePreferenceCenter() {
                 </div>
               </div>
 
-              <div className="flex flex-col gap-2.5 border-t border-ink/10 p-5 sm:flex-row sm:justify-end sm:p-6">
+              <div className="flex flex-col gap-2.5 border-t border-border p-5 sm:flex-row sm:justify-end sm:p-6">
                 <button
                   onClick={handleAcceptAll}
                   className="btn-primary w-full justify-center !py-2.5 !text-sm sm:w-auto"
@@ -398,7 +398,7 @@ export function CookiePreferenceCenter() {
             if (stored) setChoices(stored);
             setModalOpen(true);
           }}
-          className="fixed bottom-4 left-4 z-40 flex h-11 w-11 items-center justify-center rounded-full bg-white text-brand-dark shadow-card-hover border border-ink/10 transition-all duration-300 hover:bg-surface hover:text-brand-accent"
+          className="fixed bottom-4 left-4 z-40 flex h-11 w-11 items-center justify-center rounded-full bg-card text-brand-dark shadow-card-hover border border-border transition-all duration-300 hover:bg-surface hover:text-primary"
           aria-label="Open cookie settings"
           title="Cookie Settings"
         >
@@ -429,10 +429,10 @@ function ToggleSwitch({
       onClick={disabled ? undefined : onClick}
       className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 ${
         disabled ? "opacity-60 cursor-not-allowed" : "cursor-pointer"
-      } ${isOn ? "bg-brand-accent" : "bg-ink/20"}`}
+      } ${isOn ? "bg-primary" : "bg-ink/20"}`}
     >
       <span
-        className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow-lg ring-0 transition-transform ${
+        className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-card shadow-lg ring-0 transition-transform ${
           isOn ? "translate-x-6" : "translate-x-1"
         }`}
       />

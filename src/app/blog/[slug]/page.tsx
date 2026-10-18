@@ -7,17 +7,12 @@ import { getPostBySlug, getAllPostSlugs } from "@/sanity/queries";
 import { ArrowLeft, Clock, Calendar } from "lucide-react";
 import Link from "next/link";
 
-// export const revalidate = 60;
-
 export async function generateStaticParams() {
   try {
     const slugs = await getAllPostSlugs();
-    // Fallback: If no posts exist yet, return a dummy param
-    // to satisfy Next.js Cache Components build requirements
     if (!slugs || slugs.length === 0) {
       return [{ slug: "placeholder" }];
     }
-
     return slugs.map((slug) => ({ slug }));
   } catch {
     return [];
@@ -59,7 +54,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           title="Article Not Found"
           description="The article you're looking for doesn't exist or may have been moved."
         />
-        <section className="section-padding bg-canvas">
+        <section className="section-padding bg-card">
           <div className="container-content max-w-xl text-center">
             <Button href="/blog" variant="primary" size="lg">
               Back to All Articles
@@ -90,10 +85,10 @@ export default async function BlogPostPage({ params }: PageProps) {
         description={post.excerpt}
       />
 
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-background">
         <div className="container-content max-w-3xl">
-          <div className="flex flex-wrap items-center gap-4 mb-8 pb-8 border-b border-ink/8">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-accent/10 text-sm font-heading font-bold text-brand-accent">
+          <div className="flex flex-wrap items-center gap-4 mb-8 pb-8 border-b border-border">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full border border-primary/20 bg-primary/10 text-sm font-heading font-bold text-primary">
               {post.authorName.charAt(0).toUpperCase()}
             </div>
             <div className="flex flex-col">
@@ -118,7 +113,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               {post.categories.map((cat) => (
                 <span
                   key={cat}
-                  className="badge bg-brand-accent/10 text-brand-accent"
+                  className="badge border border-primary/20 bg-primary/10 text-primary"
                 >
                   {cat}
                 </span>
@@ -128,10 +123,10 @@ export default async function BlogPostPage({ params }: PageProps) {
 
           <PortableText value={post.body} />
 
-          <div className="mt-12 pt-8 border-t border-ink/8">
+          <div className="mt-12 pt-8 border-t border-border">
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-brand-accent hover:gap-3 transition-all"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all"
             >
               <ArrowLeft className="h-4 w-4" />
               Back to all articles

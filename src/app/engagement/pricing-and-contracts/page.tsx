@@ -91,7 +91,7 @@ export default function PricingContracts() {
         description="Flexible engagement models designed for IT support, endpoint management, and security monitoring. Every plan includes clear service level standards, responsive helpdesk coverage, and transparent monthly reporting."
       />
 
-      <section className="section-padding bg-canvas">
+      <section className="section-padding bg-card">
         <div className="container-content">
           <SectionHeader
             eyebrow="Engagement Models"
@@ -103,13 +103,13 @@ export default function PricingContracts() {
             {pricingModels.map((m) => (
               <div
                 key={m.model}
-                className="flex flex-col rounded-lg border border-ink/10 bg-white p-6"
+                className="flex flex-col rounded-lg border border-border bg-card p-6"
               >
                 <div>
                   <h3 className="text-lg font-heading font-bold text-ink">
                     {m.model}
                   </h3>
-                  <p className="mt-1 text-sm font-semibold text-brand-accent">
+                  <p className="mt-1 text-sm font-semibold text-primary">
                     {m.structure}
                   </p>
                 </div>
@@ -117,13 +117,13 @@ export default function PricingContracts() {
                 <p className="mt-2 text-sm text-ink-soft leading-relaxed">
                   {m.description}
                 </p>
-                <ul className="mt-4 space-y-2 border-t border-ink/10 pt-4">
+                <ul className="mt-4 space-y-2 border-t border-border pt-4">
                   {m.features.map((f) => (
                     <li
                       key={f}
                       className="flex items-start gap-2 text-sm text-ink-soft"
                     >
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand-accent" />
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                       {f}
                     </li>
                   ))}
@@ -134,7 +134,7 @@ export default function PricingContracts() {
         </div>
       </section>
 
-      <section className="section-padding bg-white border-y border-ink/10">
+      <section className="section-padding bg-card border-y border-border">
         <div className="container-content">
           <SectionHeader
             eyebrow="Contract Terms"
@@ -149,7 +149,7 @@ export default function PricingContracts() {
         </div>
       </section>
 
-      <section className="section-padding bg-canvas">
+      <section className="section-padding bg-card">
         <div className="container-content max-w-3xl">
           <SectionHeader
             eyebrow="Transparency"

@@ -13,9 +13,9 @@ interface AdLayoutProps {
 
 export function AdLayout({ children }: AdLayoutProps) {
   return (
-    <div className="flex min-h-screen flex-col bg-white">
+    <div className="flex min-h-screen flex-col bg-card">
       <ScrollToTop />
-      <header className="sticky top-0 z-50 w-full border-b border-ink/10 bg-white/95 backdrop-blur-md">
+      <header className="sticky top-0 z-50 w-full border-b border-border bg-card/95 backdrop-blur-md">
         <div className="container-content">
           <div className="flex h-16 items-center justify-between md:h-[72px]">
             <Link
@@ -28,9 +28,9 @@ export function AdLayout({ children }: AdLayoutProps) {
             <div className="flex items-center gap-3 md:gap-4">
               <a
                 href={company.phoneHref}
-                className="hidden items-center gap-2 text-sm font-semibold text-brand-dark transition-colors hover:text-brand-accent sm:flex"
+                className="hidden items-center gap-2 text-sm font-semibold text-brand-dark transition-colors hover:text-primary sm:flex"
               >
-                <Phone className="h-4 w-4 text-brand-accent" />
+                <Phone className="h-4 w-4 text-primary" />
                 {company.phoneDisplay}
               </a>
               <a
@@ -51,7 +51,7 @@ export function AdLayout({ children }: AdLayoutProps) {
         </div>
       </header>
       <main className="flex-1">{children}</main>
-      <footer className="border-t border-ink/10 bg-canvas">
+      <footer className="border-t border-border bg-card">
         <div className="container-content">
           <div className="flex flex-col items-center justify-between gap-4 py-8 sm:flex-row">
             <Link
@@ -64,13 +64,13 @@ export function AdLayout({ children }: AdLayoutProps) {
             <div className="flex flex-col items-center gap-2 text-sm text-ink-muted sm:flex-row sm:gap-6">
               <a
                 href={company.phoneHref}
-                className="font-semibold text-brand-dark transition-colors hover:text-brand-accent"
+                className="font-semibold text-brand-dark transition-colors hover:text-primary"
               >
                 {company.phoneDisplay}
               </a>
               <a
                 href={company.emailHref}
-                className="transition-colors hover:text-brand-accent"
+                className="transition-colors hover:text-primary"
               >
                 {company.email}
               </a>

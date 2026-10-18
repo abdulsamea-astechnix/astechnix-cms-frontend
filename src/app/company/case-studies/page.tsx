@@ -28,23 +28,23 @@ export default function CaseStudies() {
         description="Documented engagement outcomes with verified metrics. We publish case studies only when results have been confirmed — not as marketing material."
       />
 
-      <section className="section-padding bg-canvas">
+      <section className="section-padding bg-card">
         <div className="container-content">
           {caseStudies.length > 0 ? (
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {caseStudies.map((study) => (
                 <div
                   key={study.slug}
-                  className="rounded-lg border border-ink/10 bg-white p-6"
+                  className="rounded-lg border border-border bg-card p-6"
                 >
-                  <p className="text-sm font-semibold text-brand-accent">
+                  <p className="text-sm font-semibold text-primary">
                     {study.sector}
                   </p>
                   <h3 className="mt-2 text-lg font-heading font-bold text-ink">
                     {study.title}
                   </h3>
                   <p className="mt-2 text-sm text-ink-soft">{study.summary}</p>
-                  <div className="mt-4 grid grid-cols-2 gap-3 border-t border-ink/10 pt-4">
+                  <div className="mt-4 grid grid-cols-2 gap-3 border-t border-border pt-4">
                     {study.metrics.map((m) => (
                       <div key={m.label}>
                         <p className="font-heading text-xl font-bold text-brand-dark">
@@ -64,7 +64,7 @@ export default function CaseStudies() {
                 title="Verified case studies will be published here."
                 description="We publish engagement summaries only when outcomes have been documented and verified. We don't fabricate proof points or inflate metrics for marketing purposes."
               />
-              <div className="mt-8 rounded-lg border border-dashed border-ink/20 bg-white/50 p-8">
+              <div className="mt-8 rounded-lg border border-dashed border-border-light bg-surface/50 p-8">
                 <p className="text-body text-ink-soft">
                   If you'd like to understand how we've delivered in
                   environments similar to yours, we can discuss relevant

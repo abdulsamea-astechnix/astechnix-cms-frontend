@@ -28,7 +28,7 @@ export default function SecurityCompliance() {
         description="Security is not a feature — it's the baseline. Every engagement includes IP ownership transfer, access controls, and defined data handling protocols."
       />
 
-      <section className="section-padding bg-canvas">
+      <section className="section-padding bg-card">
         <div className="container-content">
           <SectionHeader
             eyebrow="Security Framework"
@@ -65,7 +65,7 @@ export default function SecurityCompliance() {
         </div>
       </section>
 
-      <section className="section-padding bg-white border-y border-ink/10">
+      <section className="section-padding bg-card border-y border-border">
         <div className="container-content max-w-3xl">
           <SectionHeader
             eyebrow="Contractual Controls"
@@ -85,7 +85,7 @@ export default function SecurityCompliance() {
                 key={item}
                 className="flex items-start gap-3 text-base text-ink-soft"
               >
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-accent" />
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                 {item}
               </li>
             ))}
@@ -93,7 +93,7 @@ export default function SecurityCompliance() {
         </div>
       </section>
 
-      <section className="section-padding bg-canvas">
+      <section className="section-padding bg-card">
         <div className="container-content">
           <SectionHeader
             eyebrow="Operational Practices"
@@ -129,7 +129,7 @@ export default function SecurityCompliance() {
             ].map((item) => (
               <div
                 key={item.title}
-                className="rounded-lg border border-ink/10 bg-white p-5"
+                className="rounded-lg border border-border bg-card p-5"
               >
                 <h3 className="text-sm font-heading font-semibold text-ink">
                   {item.title}
@@ -141,9 +141,9 @@ export default function SecurityCompliance() {
         </div>
       </section>
 
-      <section className="section-padding bg-white border-y border-ink/10">
+      <section className="section-padding bg-card border-y border-border">
         <div className="container-content max-w-3xl">
-          <div className="rounded-lg border border-ink/10 bg-canvas p-6 md:p-8">
+          <div className="rounded-lg border border-border bg-card p-6 md:p-8">
             <h3 className="heading-3 text-ink">
               On certifications and compliance standards
             </h3>

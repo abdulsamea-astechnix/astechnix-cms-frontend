@@ -174,7 +174,7 @@ export function LeadForm({
             htmlFor="lead-name"
             className="block text-xs font-semibold text-ink mb-1"
           >
-            Full Name <span className="text-red-500">*</span>
+            Full Name <span className="text-error">*</span>
           </label>
           <input
             id="lead-name"
@@ -186,7 +186,7 @@ export function LeadForm({
             aria-invalid={!!errors.name}
           />
           {errors.name && (
-            <p className="mt-0.5 text-xs text-red-500">{errors.name}</p>
+            <p className="mt-0.5 text-xs text-error">{errors.name}</p>
           )}
         </div>
 
@@ -195,7 +195,7 @@ export function LeadForm({
             htmlFor="lead-email"
             className="block text-xs font-semibold text-ink mb-1"
           >
-            Work Email <span className="text-red-500">*</span>
+            Work Email <span className="text-error">*</span>
           </label>
           <input
             id="lead-email"
@@ -207,7 +207,7 @@ export function LeadForm({
             aria-invalid={!!errors.email}
           />
           {errors.email && (
-            <p className="mt-0.5 text-xs text-red-500">{errors.email}</p>
+            <p className="mt-0.5 text-xs text-error">{errors.email}</p>
           )}
         </div>
 
@@ -236,7 +236,7 @@ export function LeadForm({
             htmlFor="lead-scope"
             className="block text-xs font-semibold text-ink mb-1"
           >
-            Additional Details <span className="text-red-500">*</span>
+            Additional Details <span className="text-error">*</span>
           </label>
           <textarea
             id="lead-scope"
@@ -248,12 +248,12 @@ export function LeadForm({
             aria-invalid={!!errors.details}
           />
           {errors.details && (
-            <p className="mt-0.5 text-xs text-red-500">{errors.details}</p>
+            <p className="mt-0.5 text-xs text-error">{errors.details}</p>
           )}
         </div>
 
         {status === "error" && (
-          <p className="text-xs text-red-500">
+          <p className="text-xs text-error">
             Something went wrong. Please try again or call us directly.
           </p>
         )}
