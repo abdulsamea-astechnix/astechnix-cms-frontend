@@ -393,9 +393,7 @@ export default function ItOutsourcing() {
                   {cap.title}
                 </h3>
                 <p className="mt-3 text-sm text-ink-soft leading-[1.7]">
-                  <span className="font-semibold text-primary">
-                    Benefit:{" "}
-                  </span>
+                  <span className="font-semibold text-primary">Benefit: </span>
                   {cap.benefit}
                 </p>
               </motion.div>
@@ -520,9 +518,7 @@ export default function ItOutsourcing() {
                 </span>
                 <h3 className="heading-3 mt-5 text-white">
                   38% Reduction in Annual{" "}
-                  <span className="text-primary">
-                    IT Operational Costs
-                  </span>
+                  <span className="text-primary">IT Operational Costs</span>
                 </h3>
                 <p className="mt-4 text-sm text-white/60 leading-[1.7]">
                   AStechnix reduces annual IT operational costs by at least 38%
