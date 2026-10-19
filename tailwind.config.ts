@@ -38,8 +38,18 @@ export default {
       },
       fontFamily: {
         sans: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
-        heading: ["var(--font-jakarta)", "'Plus Jakarta Sans'", "system-ui", "sans-serif"],
-        mono: ["var(--font-mono)", "JetBrains Mono", "ui-monospace", "monospace"],
+        heading: [
+          "var(--font-jakarta)",
+          "'Plus Jakarta Sans'",
+          "system-ui",
+          "sans-serif",
+        ],
+        mono: [
+          "var(--font-mono)",
+          "JetBrains Mono",
+          "ui-monospace",
+          "monospace",
+        ],
       },
       maxWidth: {
         content: "1200px",
@@ -61,14 +71,18 @@ export default {
       },
       fontSize: {
         display: ["3.5rem", { lineHeight: "1.05", letterSpacing: "-0.03em" }],
-        "display-lg": ["4.5rem", { lineHeight: "1.05", letterSpacing: "-0.03em" }],
+        "display-lg": [
+          "4.5rem",
+          { lineHeight: "1.05", letterSpacing: "-0.03em" },
+        ],
       },
       transitionTimingFunction: {
         enterprise: "cubic-bezier(0.22, 1, 0.36, 1)",
       },
       boxShadow: {
         card: "0 1px 3px 0 rgba(0, 0, 0, 0.2)",
-        "card-hover": "0 12px 28px -4px rgba(0, 0, 0, 0.3), 0 4px 10px -2px rgba(0, 0, 0, 0.2)",
+        "card-hover":
+          "0 12px 28px -4px rgba(0, 0, 0, 0.3), 0 4px 10px -2px rgba(0, 0, 0, 0.2)",
       },
     },
   },
