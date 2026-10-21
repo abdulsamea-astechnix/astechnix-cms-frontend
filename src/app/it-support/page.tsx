@@ -277,7 +277,7 @@ export default function ItSupportPage() {
               <p className="text-lead mt-6 text-white/70">
                 All-in-one IT support built for growing companies. Access
                 reliable, full-service helpdesk and IT support with zero quality
-                loss and full overlap with US working hours.
+                loss and full overlap with working hours.
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
