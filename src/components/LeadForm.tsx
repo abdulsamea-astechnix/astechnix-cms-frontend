@@ -38,8 +38,8 @@ interface LeadFormProps {
 }
 
 export function LeadForm({
-  pageSource = "/it-outsourcing",
-  formName = "Google Ads IT Outsourcing Landing Page Lead",
+  pageSource = "/it-support",
+  formName = "Google Ads IT Support Landing Page Lead",
   userIntent = "Google Ads Direct Lead",
 }: LeadFormProps) {
   const [form, setForm] = useState<LeadFormState>(initialState);
@@ -76,7 +76,7 @@ export function LeadForm({
     }
 
     if (!form.details.trim()) {
-      e.details = "Please describe your outsourcing requirements";
+      e.details = "Please describe your IT support requirements";
     }
 
     setErrors(e);
@@ -161,7 +161,7 @@ export function LeadForm({
   return (
     <div ref={containerRef}>
       <h2 className="text-xl font-bold text-ink">
-        Request an Outsourcing Estimate
+        Request an IT Support Estimate
       </h2>
       <p className="mt-1 text-xs text-ink-soft leading-snug">
         Share your IT requirements to receive a custom proposal within 1–3
@@ -244,7 +244,7 @@ export function LeadForm({
             value={form.details}
             onChange={(e) => setForm({ ...form, details: e.target.value })}
             className="input-field !py-1.5 !text-sm resize-y"
-            placeholder="Briefly describe your IT outsourcing requirements..."
+            placeholder="Briefly describe your IT support requirements..."
             aria-invalid={!!errors.details}
           />
           {errors.details && (
