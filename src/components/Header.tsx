@@ -27,7 +27,7 @@ export function Header() {
 
 function HeaderFallback() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-[rgba(19,23,34,0.94)] backdrop-blur-md">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-white/95 backdrop-blur-md">
       <div className="container-content">
         <div className="flex h-16 items-center justify-between lg:h-[72px]">
           <Link
@@ -35,7 +35,7 @@ function HeaderFallback() {
             className="flex items-center shrink-0"
             aria-label="AStechnix home"
           >
-            <Logo className="h-8 w-auto lg:h-9" />
+            <Logo className="h-9 w-auto lg:h-10" />
           </Link>
         </div>
       </div>
@@ -91,9 +91,10 @@ function HeaderContent() {
   return (
     <>
       <header
-        className={`sticky top-0 z-50 w-full bg-[rgba(19,23,34,0.94)] backdrop-blur-md border-b transition-all duration-300 ${
-          scrolled ? "border-border shadow-lg shadow-black/20" : "border-transparent"
-        }`}
+        className={`sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b transition-all duration-300 ${
+          scrolled ? "border-border shadow-md shadow-black/5" : "border-transparent"
+        }`
+      }
       >
         <div className="container-content">
           <div className="flex h-16 items-center justify-between lg:h-[72px]">
@@ -102,7 +103,7 @@ function HeaderContent() {
               className="flex items-center shrink-0"
               aria-label="AStechnix home"
             >
-              <Logo className="h-8 w-auto lg:h-9" />
+              <Logo className="h-9 w-auto lg:h-10" />
             </Link>
 
             <DesktopNavigation
@@ -115,9 +116,9 @@ function HeaderContent() {
             <div className="hidden lg:flex items-center gap-2 xl:gap-3 shrink-0">
               <Link
                 href={ctaConfig.primary.path}
-                className="text-sm font-semibold text-ink-soft hover:text-primary transition-colors whitespace-nowrap"
+                className="text-sm font-semibold text-ink hover:text-primary transition-colors whitespace-nowrap"
               >
-                Contact Us
+                {ctaConfig.primary.label}
               </Link>
 
               <a
@@ -131,7 +132,7 @@ function HeaderContent() {
 
             <button
               onClick={() => setMobileOpen(true)}
-              className="flex h-10 w-10 items-center justify-center rounded-md text-ink-soft hover:bg-card-elevated lg:hidden"
+              className="flex h-10 w-10 items-center justify-center rounded-md text-ink hover:bg-surface lg:hidden"
               aria-label="Open menu"
               aria-expanded={mobileOpen}
             >
@@ -190,7 +191,7 @@ function DesktopNavigation({
                 className={`flex items-center gap-1 px-2.5 xl:px-3.5 py-2 text-xs xl:text-sm font-medium transition-colors duration-200 whitespace-nowrap ${
                   isActive
                     ? "text-primary"
-                    : "text-ink-soft hover:text-ink"
+                    : "text-ink hover:text-primary"
                 }`}
                 aria-expanded={isOpen}
                 aria-haspopup="true"
@@ -208,7 +209,7 @@ function DesktopNavigation({
                 className={`px-2.5 xl:px-3.5 py-2 text-xs xl:text-sm font-medium transition-colors duration-200 whitespace-nowrap ${
                   isActive
                     ? "text-primary"
-                    : "text-ink-soft hover:text-ink"
+                    : "text-ink hover:text-primary"
                 }`}
               >
                 {group.label}
@@ -228,12 +229,12 @@ function DesktopNavigation({
                   className="absolute left-0 top-full z-50 min-w-[280px] xl:min-w-[300px] pt-3"
                   role="menu"
                 >
-                  <div className="overflow-hidden rounded-lg border border-border bg-card shadow-card-hover">
+                  <div className="overflow-hidden rounded-lg border border-border bg-white shadow-lg shadow-black/10">
                     {group.children!.map((child) => (
                       <Link
                         key={child.path}
                         href={child.path}
-                        className={`group flex items-center justify-between px-4 py-3 text-sm transition-colors hover:bg-card-elevated ${
+                        className={`group flex items-center justify-between px-4 py-3 text-sm transition-colors hover:bg-surface ${
                           currentPath === child.path
                             ? "font-semibold text-primary"
                             : "text-ink-soft"
@@ -242,7 +243,7 @@ function DesktopNavigation({
                         onClick={() => setOpenMenu(null)}
                       >
                         {child.label}
-                        <ArrowRight className="h-3.5 w-3.5 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-1 text-primary" />
+                        <ArrowRight className="h-3.5 w-3.5 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-1 text-accent" />
                       </Link>
                     ))}
                   </div>
@@ -294,7 +295,7 @@ function MobileNavigation({
             animate={{ opacity: 1 }}
             exit={reducedMotion ? undefined : { opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm lg:hidden"
+            className="fixed inset-0 z-50 bg-primary/40 backdrop-blur-sm lg:hidden"
             onClick={onClose}
             aria-hidden="true"
           />
@@ -308,17 +309,17 @@ function MobileNavigation({
               duration: 0.3,
               ease: [0.22, 1, 0.36, 1],
             }}
-            className="fixed right-0 top-0 z-50 h-full w-[340px] max-w-[88vw] overflow-y-auto bg-card border-l border-border shadow-2xl lg:hidden"
+            className="fixed right-0 top-0 z-50 h-full w-[340px] max-w-[88vw] overflow-y-auto bg-white border-l border-border shadow-2xl lg:hidden"
             role="dialog"
             aria-modal="true"
             aria-label="Navigation menu"
             onKeyDown={handleKeyDown}
           >
             <div className="flex items-center justify-between border-b border-border px-5 py-4">
-              <Logo className="h-7 w-auto" />
+              <Logo className="h-8 w-auto" />
               <button
                 onClick={onClose}
-                className="flex h-10 w-10 items-center justify-center rounded-md text-ink-soft hover:bg-surface"
+                className="flex h-10 w-10 items-center justify-center rounded-md text-ink hover:bg-surface"
                 aria-label="Close menu"
               >
                 <X className="h-5 w-5" />
@@ -328,7 +329,7 @@ function MobileNavigation({
             <div className="px-3 py-4">
               {navigation.map((group) => (
                 <div key={group.label} className="mb-4">
-                  <p className="px-3 py-2 text-xs font-mono font-medium uppercase tracking-[0.12em] text-ink-muted">
+                  <p className="px-3 py-2 text-xs font-mono font-medium uppercase tracking-[0.12em] text-accent">
                     {group.label}
                   </p>
 
@@ -342,7 +343,7 @@ function MobileNavigation({
                           className={`block rounded-md px-3 py-2.5 text-sm transition-colors ${
                             currentPath === child.path
                               ? "bg-primary/10 font-semibold text-primary"
-                              : "text-ink-soft hover:bg-surface"
+                              : "text-ink hover:text-primary hover:bg-surface"
                           }`}
                         >
                           {child.label}
@@ -356,7 +357,7 @@ function MobileNavigation({
                       className={`block rounded-md px-3 py-2.5 text-sm transition-colors ${
                         currentPath === group.path
                           ? "bg-primary/10 font-semibold text-primary"
-                          : "text-ink-soft hover:bg-surface"
+                          : "text-ink hover:text-primary hover:bg-surface"
                       }`}
                     >
                       {group.label}
@@ -377,14 +378,14 @@ function MobileNavigation({
                 <div className="mt-4 space-y-2 text-sm">
                   <a
                     href={company.phoneHref}
-                    className="block text-ink-soft hover:text-primary transition-colors"
+                    className="block text-ink-soft hover:text-accent transition-colors"
                   >
                     {company.phoneDisplay}
                   </a>
 
                   <a
                     href={company.emailHref}
-                    className="block text-ink-soft hover:text-primary transition-colors"
+                    className="block text-ink-soft hover:text-accent transition-colors"
                   >
                     {company.email}
                   </a>

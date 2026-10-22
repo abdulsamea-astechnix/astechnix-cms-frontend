@@ -6,14 +6,20 @@ type LogoProps = SVGProps<SVGSVGElement> & {
 };
 
 const ICON_COLOR: Record<string, string> = {
-  dark: "#b3e93a",
-  light: "#b3e93a",
+  dark: "#0d1b3e",
+  light: "#d4892a",
   monochrome: "currentColor",
 };
 
 const TEXT_COLOR: Record<string, string> = {
-  dark: "#eceff3",
-  light: "#eceff3",
+  dark: "#0d1826",
+  light: "#ffffff",
+  monochrome: "currentColor",
+};
+
+const SUBTEXT_COLOR: Record<string, string> = {
+  dark: "hsl(220 12% 52%)",
+  light: "hsl(216 18% 88%)",
   monochrome: "currentColor",
 };
 
@@ -55,7 +61,7 @@ export function Logo({
 
   return (
     <svg
-      viewBox="0 0 200 40"
+      viewBox="0 0 210 40"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-label="AStechnix"
@@ -78,14 +84,25 @@ export function Logo({
       <circle cx="20" cy="20" r="3" fill={iconColor} />
       <text
         x="44"
-        y="27"
+        y="24"
         fontFamily="'Plus Jakarta Sans', system-ui, sans-serif"
-        fontSize="20"
+        fontSize="19"
         fontWeight="800"
         fill={textColor}
         letterSpacing="-0.02em"
       >
         AStechnix
+      </text>
+      <text
+        x="44"
+        y="35"
+        fontFamily="'Plus Jakarta Sans', system-ui, sans-serif"
+        fontSize="8"
+        fontWeight="300"
+        fill={SUBTEXT_COLOR[variant]}
+        letterSpacing="0.04em"
+      >
+        Managed IT Services
       </text>
     </svg>
   );

@@ -22,34 +22,34 @@ export function Footer() {
   }, []);
 
   return (
-    <footer className="relative bg-[hsl(222,26%,7%)] text-ink">
+    <footer className="relative bg-[hsl(218,68%,22%)] text-white">
       {/* Electric lime top border */}
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-primary to-transparent" />
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-accent to-transparent" />
 
       <div className="container-content py-14 md:py-20">
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-4">
-            <Logo variant="light" className="h-9 w-auto" />
-            <p className="mt-5 text-sm text-ink-soft leading-relaxed max-w-xs">
+            <Logo variant="light" className="h-10 w-auto" />
+            <p className="mt-5 text-sm text-[hsl(216,18%,88%)] leading-relaxed max-w-xs">
               {company.tagline}. Headquartered in {company.headquarters}.
             </p>
             <div className="mt-6 space-y-3 text-sm">
               <a
                 href={company.emailHref}
-                className="flex items-center gap-3 text-ink-soft hover:text-primary transition-colors"
+                className="flex items-center gap-3 text-[hsl(216,18%,88%)] hover:text-accent transition-colors"
               >
-                <Mail className="h-4 w-4 text-primary" />
+                <Mail className="h-4 w-4 text-accent" />
                 {company.email}
               </a>
               <a
                 href={company.phoneHref}
-                className="flex items-center gap-3 text-ink-soft hover:text-primary transition-colors"
+                className="flex items-center gap-3 text-[hsl(216,18%,88%)] hover:text-accent transition-colors"
               >
-                <Phone className="h-4 w-4 text-primary" />
+                <Phone className="h-4 w-4 text-accent" />
                 {company.phoneDisplay}
               </a>
-              <p className="flex items-center gap-3 text-ink-soft">
-                <MapPin className="h-4 w-4 text-primary" />
+              <p className="flex items-center gap-3 text-[hsl(216,18%,88%)]">
+                <MapPin className="h-4 w-4 text-accent" />
                 {company.headquarters}
               </p>
             </div>
@@ -66,14 +66,14 @@ export function Footer() {
         </div>
         <div className="mt-14 flex flex-col items-start justify-between gap-6 border-t border-border pt-8 md:flex-row md:items-center">
           <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-6">
-            <p className="text-sm text-ink-muted">
+            <p className="text-sm text-[hsl(216,18%,88%)]">
               &copy; {currentYear} {company.name}. All rights reserved.
             </p>
             <button
               onClick={() =>
                 window.dispatchEvent(new Event("opencookiepreferencecenter"))
               }
-              className="text-sm text-ink-muted transition-colors hover:text-primary"
+              className="text-sm text-[hsl(216,18%,88%)] transition-colors hover:text-accent"
             >
               Cookie Settings
             </button>
@@ -104,7 +104,7 @@ export function Footer() {
 function FooterColumn({ title, items }: { title: string; items: NavItem[] }) {
   return (
     <div>
-      <h3 className="text-sm font-heading font-semibold text-ink mb-4">
+      <h3 className="text-sm font-heading font-semibold text-white mb-4">
         {title}
       </h3>
       <ul className="space-y-2.5">
@@ -112,7 +112,7 @@ function FooterColumn({ title, items }: { title: string; items: NavItem[] }) {
           <li key={item.path}>
             <Link
               href={item.path}
-              className="text-sm text-ink-soft transition-colors hover:text-primary"
+              className="text-sm text-[hsl(216,18%,88%)] transition-colors hover:text-accent"
             >
               {item.label}
             </Link>
@@ -138,7 +138,7 @@ function SocialLink({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="flex h-10 w-10 items-center justify-center rounded-lg border border-border text-ink-soft transition-all duration-300 hover:border-primary hover:bg-primary hover:text-primary-foreground"
+      className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/20 text-[hsl(216,18%,88%)] transition-all duration-300 hover:border-accent hover:bg-accent hover:text-white"
     >
       {children}
     </a>

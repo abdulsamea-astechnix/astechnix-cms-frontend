@@ -4,36 +4,45 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "hsl(222, 24%, 10%)",
-        foreground: "hsl(210, 18%, 94%)",
+        background: "hsl(0 0% 100%)",
+        foreground: "hsl(220 25% 12%)",
         primary: {
-          DEFAULT: "hsl(84, 78%, 56%)",
-          foreground: "hsl(222, 26%, 8%)",
-          dark: "hsl(84, 70%, 46%)",
-          light: "hsl(84, 82%, 66%)",
+          DEFAULT: "hsl(218 68% 22%)",
+          foreground: "hsl(0 0% 100%)",
+          dark: "hsl(218 68% 18%)",
+          light: "hsl(218 68% 28%)",
+        },
+        accent: {
+          DEFAULT: "hsl(34 72% 50%)",
+          foreground: "hsl(0 0% 100%)",
+          dark: "hsl(34 72% 42%)",
+          light: "hsl(34 72% 58%)",
         },
         card: {
-          DEFAULT: "hsl(222, 22%, 13%)",
-          elevated: "hsl(222, 20%, 17%)",
+          DEFAULT: "hsl(0 0% 100%)",
+          elevated: "hsl(216 20% 96%)",
         },
-        surface: "hsl(222, 20%, 16%)",
+        surface: {
+          DEFAULT: "hsl(216 20% 96%)",
+          dark: "hsl(218 68% 22%)",
+        },
         border: {
-          DEFAULT: "hsl(222, 18%, 20%)",
-          light: "hsl(222, 16%, 24%)",
+          DEFAULT: "hsl(216 18% 88%)",
+          light: "hsl(216 18% 90%)",
         },
         muted: {
-          DEFAULT: "hsl(215, 10%, 56%)",
-          foreground: "hsl(215, 10%, 56%)",
+          DEFAULT: "hsl(220 12% 52%)",
+          foreground: "hsl(220 12% 52%)",
         },
-        "brand-dark": "hsl(222, 24%, 10%)",
-        "brand-accent": "hsl(84, 78%, 56%)",
-        "brand-accent-light": "hsl(84, 82%, 66%)",
-        "brand-accent-dark": "hsl(84, 70%, 46%)",
-        canvas: "hsl(222, 24%, 10%)",
+        "brand-dark": "hsl(218 68% 22%)",
+        "brand-accent": "hsl(34 72% 50%)",
+        "brand-accent-light": "hsl(34 72% 58%)",
+        "brand-accent-dark": "hsl(34 72% 42%)",
+        canvas: "hsl(0 0% 100%)",
         ink: {
-          DEFAULT: "hsl(210, 18%, 94%)",
-          soft: "hsl(210, 12%, 70%)",
-          muted: "hsl(215, 10%, 52%)",
+          DEFAULT: "hsl(220 25% 12%)",
+          soft: "hsl(220 12% 52%)",
+          muted: "hsl(220 12% 52%)",
         },
       },
       fontFamily: {
@@ -80,9 +89,11 @@ export default {
         enterprise: "cubic-bezier(0.22, 1, 0.36, 1)",
       },
       boxShadow: {
-        card: "0 1px 3px 0 rgba(0, 0, 0, 0.2)",
+        card: "0 1px 3px 0 rgba(0, 0, 0, 0.06)",
         "card-hover":
-          "0 12px 28px -4px rgba(0, 0, 0, 0.3), 0 4px 10px -2px rgba(0, 0, 0, 0.2)",
+          "0 0 20px hsla(34, 72%, 50%, 0.1), 0 4px 10px -2px rgba(0, 0, 0, 0.06)",
+        "card-navy":
+          "0 0 25px hsla(218, 68%, 22%, 0.15)",
       },
     },
   },
