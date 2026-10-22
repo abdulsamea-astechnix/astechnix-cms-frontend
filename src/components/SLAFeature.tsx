@@ -20,7 +20,7 @@ export function SLAFeature({
   return (
     <div className="flex gap-4">
       <div
-        className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border ${isDark ? "border-primary/30 bg-primary/15 text-primary-light" : "border-primary/20 bg-primary/10 text-primary"}`}
+        className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border ${isDark ? "border-accent/30 bg-accent/15 text-accent-light" : "border-accent/20 bg-accent/10 text-accent"}`}
       >
         {icon ?? <Check className="h-5 w-5" />}
       </div>

@@ -29,7 +29,7 @@ export function FAQAccordion({ items }: FAQAccordionProps) {
               className="flex w-full items-center justify-between gap-4 py-5 text-left"
               aria-expanded={isOpen}
             >
-              <span className="text-base font-heading font-semibold text-ink">
+              <span className="text-base font-heading font-semibold text-primary">
                 {item.question}
               </span>
               <ChevronDown

@@ -57,7 +57,7 @@ export function PageHeader({
   backgroundImage,
 }: PageHeaderProps) {
   return (
-    <section className="relative overflow-hidden bg-brand-dark">
+    <section className="relative overflow-hidden bg-white border-b border-border">
       {backgroundImage && (
         <>
           <div className="absolute inset-0">
@@ -68,13 +68,13 @@ export function PageHeader({
               loading="eager"
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/95 via-brand-dark/88 to-brand-dark/75" />
+          <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-white/90 to-white/80" />
         </>
       )}
       {!backgroundImage && (
         <>
-          <div className="absolute inset-0 grid-pattern-lime opacity-25" />
-          <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-primary/8 blur-3xl" />
+          <div className="absolute inset-0 grid-pattern opacity-30" />
+          <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-accent/5 blur-3xl" />
         </>
       )}
       <div className="container-content relative py-14 md:py-24">

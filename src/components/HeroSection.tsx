@@ -27,7 +27,7 @@ export function HeroSection({
 
   return (
     <section
-      className={`relative overflow-hidden ${isDark ? "bg-brand-dark text-ink" : "bg-card text-ink"}`}
+      className={`relative overflow-hidden ${isDark ? "bg-primary text-white" : "bg-white text-ink"}`}
     >
       {hasImage && (
         <>
@@ -39,14 +39,14 @@ export function HeroSection({
               loading="eager"
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/95 via-brand-dark/88 to-brand-dark/72" />
-          <div className="absolute inset-0 grid-pattern-lime opacity-40" />
+          <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-white/90 to-white/75" />
+          <div className="absolute inset-0 grid-pattern opacity-30" />
         </>
       )}
       {!hasImage && (
         <>
-          <div className="absolute inset-0 grid-pattern-lime opacity-30" />
-          <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-primary/8 blur-3xl" />
+          <div className="absolute inset-0 grid-pattern opacity-30" />
+          <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-accent/5 blur-3xl" />
         </>
       )}
       <div className="container-content relative">
@@ -65,7 +65,7 @@ export function HeroSection({
                 transition={{ duration: 0.5, delay: 0.1 }}
                 className="mb-5"
               >
-                <span className="eyebrow inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3.5 py-1.5">
+                <span className="eyebrow inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-3.5 py-1.5">
                   {eyebrow}
                 </span>
               </motion.div>
@@ -74,7 +74,7 @@ export function HeroSection({
               initial={reducedMotion ? false : { opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className={`heading-display ${isDark ? "text-ink" : "text-ink"}`}
+              className={`heading-display ${isDark ? "text-white" : "text-ink"}`}
             >
               {title}
             </motion.h1>
@@ -82,7 +82,7 @@ export function HeroSection({
               initial={reducedMotion ? false : { opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.25 }}
-              className={`text-lead mt-6 max-w-2xl ${isDark ? "text-ink-soft" : "text-ink-soft"}`}
+              className={`text-lead mt-6 max-w-2xl ${isDark ? "text-white/70" : "text-ink-soft"}`}
             >
               {description}
             </motion.p>

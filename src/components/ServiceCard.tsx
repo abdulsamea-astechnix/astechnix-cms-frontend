@@ -58,9 +58,9 @@ export function ServiceCard({ service, index = 0 }: ServiceCardProps) {
       >
         <Link
           href={service.path}
-          className="card card-hover group block h-full rounded-xl border-border bg-card p-6"
+          className="card card-hover group block h-full rounded-xl border-border bg-white p-6"
         >
-          <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-primary/20 bg-primary/10 text-primary transition-all duration-300 group-hover:border-primary group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110">
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-accent/20 bg-accent/10 text-accent transition-all duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-white group-hover:scale-110">
             <IconComponent className="h-6 w-6" />
           </div>
           <h3 className="mt-5 text-lg font-heading font-bold text-ink">
@@ -69,7 +69,7 @@ export function ServiceCard({ service, index = 0 }: ServiceCardProps) {
           <p className="mt-3 text-sm text-ink-soft leading-[1.7]">
             {service.description}
           </p>
-          <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
+          <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-accent">
             Learn more
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </span>

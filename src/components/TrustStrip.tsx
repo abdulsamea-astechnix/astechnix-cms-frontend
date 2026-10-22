@@ -12,7 +12,7 @@ export function TrustStrip({ points }: TrustStripProps) {
   const reducedMotion = useReducedMotion();
 
   return (
-    <section className="border-y border-border bg-card">
+    <section className="border-y border-border bg-white">
       <div className="container-content">
         <div className="grid grid-cols-2 gap-8 py-10 md:grid-cols-4 md:py-14">
           {points.map((point, i) => (
@@ -24,10 +24,10 @@ export function TrustStrip({ points }: TrustStripProps) {
               transition={{ duration: 0.4, delay: i * 0.1 }}
               className="text-center md:text-left"
             >
-              <p className="font-heading text-3xl font-extrabold text-ink tabular-nums md:text-4xl">
+              <p className="font-heading text-3xl font-extrabold text-primary tabular-nums md:text-4xl">
                 {point.value}
                 {point.suffix && (
-                  <span className="text-primary">{point.suffix}</span>
+                  <span className="text-accent">{point.suffix}</span>
                 )}
               </p>
               <p className="mt-1.5 text-sm text-ink-muted">{point.label}</p>

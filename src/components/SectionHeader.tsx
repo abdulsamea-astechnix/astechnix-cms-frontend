@@ -34,7 +34,7 @@ export function SectionHeader({
       className={`max-w-2xl ${alignClass} ${className}`}
     >
       {eyebrow && (
-        <p className={`eyebrow mb-4 ${isDark ? "text-primary-light" : "text-primary"}`}>
+        <p className={`eyebrow mb-4 ${isDark ? "text-accent-light" : "text-accent"}`}>
           {eyebrow}
         </p>
       )}
