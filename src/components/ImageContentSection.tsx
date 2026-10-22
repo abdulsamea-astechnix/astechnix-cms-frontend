@@ -27,10 +27,12 @@ export function ImageContentSection({
   const isTinted = variant === "tinted";
 
   return (
-    <section className={isTinted ? "bg-surface" : "bg-white">
+    <section className={isTinted ? "bg-surface" : "bg-white"}>
       <div className="container-content py-section-sm md:py-section">
         <div
-          className={`grid items-center gap-10 lg:gap-16 lg:grid-cols-2 ${reverse ? "lg:grid-flow-dense" : ""}`}
+          className={`grid items-center gap-10 lg:gap-16 lg:grid-cols-2 ${
+            reverse ? "lg:grid-flow-dense" : ""
+          }`}
         >
           <motion.div
             initial={
@@ -38,7 +40,10 @@ export function ImageContentSection({
             }
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            transition={{
+              duration: 0.6,
+              ease: [0.22, 1, 0.36, 1],
+            }}
             className={reverse ? "lg:col-start-2" : ""}
           >
             <div className="relative overflow-hidden rounded-xl border border-border shadow-card-hover">
@@ -58,15 +63,17 @@ export function ImageContentSection({
             }
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            transition={{
+              duration: 0.6,
+              delay: 0.1,
+              ease: [0.22, 1, 0.36, 1],
+            }}
             className={reverse ? "lg:col-start-1 lg:row-start-1" : ""}
           >
-            {eyebrow && (
-              <p className="eyebrow mb-4">
-                {eyebrow}
-              </p>
-            )}
+            {eyebrow && <p className="eyebrow mb-4">{eyebrow}</p>}
+
             <h2 className="heading-2 text-ink">{title}</h2>
+
             <div className="mt-5 space-y-4">{children}</div>
           </motion.div>
         </div>
