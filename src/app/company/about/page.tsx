@@ -32,10 +32,7 @@ export default function About() {
       />
       <TrustStrip points={proofPoints} />
 
-      <section className="section-padding bg-surface">
-        <div className="container-content max-w-3xl">
-          <SectionHeader
-            eyebrow="Who We Are"
+      <section className="section-padding bg-white">
             title="A practical IT support partner for growing teams."
             className="mb-6"
           />
@@ -59,7 +56,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="section-padding border-y border-border bg-surface">
+      <section className="section-padding border-y border-border bg-white">
         <div className="container-content">
           <SectionHeader
             eyebrow="Our Focus"

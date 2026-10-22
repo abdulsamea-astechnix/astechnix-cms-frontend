@@ -23,8 +23,9 @@
 
   /* ── Surface System ── */
   --color-card: hsl(0 0% 100%);
-  --color-card-elevated: hsl(216 20% 96%);
-  --color-surface: hsl(216 20% 96%);
+  --color-card-elevated: hsl(218 25% 93%);
+  --color-surface: hsl(218 30% 94%);
+  --color-surface-tinted: hsl(218 25% 92%);
   --color-surface-dark: hsl(218 68% 22%);
 
   /* ── Border / Muted ── */
@@ -270,7 +271,7 @@
   }
 
   .section-tinted {
-    background-color: hsl(216 20% 96%);
+    background-color: hsl(218 30% 94%);
   }
 
   .section-elevated {

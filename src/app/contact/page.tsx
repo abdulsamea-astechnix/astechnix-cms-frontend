@@ -56,7 +56,7 @@ export default function Contact() {
               <div className="space-y-4">
                 <a
                   href={company.emailHref}
-                  className="flex items-start gap-4 rounded-lg border border-border bg-surface p-4 transition-colors hover:border-accent/30"
+                  className="flex items-start gap-4 rounded-lg border border-border bg-white p-4 transition-colors hover:border-accent/30"
                 >
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-accent/20 bg-accent/10 text-accent">
                     <Mail className="h-5 w-5" />
@@ -68,7 +68,7 @@ export default function Contact() {
                 </a>
                 <a
                   href={company.phoneHref}
-                  className="flex items-start gap-4 rounded-lg border border-border bg-surface p-4 transition-colors hover:border-accent/30"
+                  className="flex items-start gap-4 rounded-lg border border-border bg-white p-4 transition-colors hover:border-accent/30"
                 >
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-accent/20 bg-accent/10 text-accent">
                     <Phone className="h-5 w-5" />
@@ -80,7 +80,7 @@ export default function Contact() {
                     </p>
                   </div>
                 </a>
-                <div className="flex items-start gap-4 rounded-lg border border-border bg-surface p-4">
+                <div className="flex items-start gap-4 rounded-lg border border-border bg-white p-4">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-accent/20 bg-accent/10 text-accent">
                     <MapPin className="h-5 w-5" />
                   </div>

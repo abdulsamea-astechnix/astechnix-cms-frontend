@@ -35,7 +35,7 @@ export default function CaseStudies() {
               {caseStudies.map((study) => (
                 <div
                   key={study.slug}
-                  className="rounded-lg border border-border bg-surface p-6"
+                  className="rounded-lg border border-border bg-white p-6"
                 >
                   <p className="text-sm font-semibold text-accent">
                     {study.sector}

@@ -39,14 +39,14 @@ export function HeroSection({
               loading="eager"
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-white/90 to-white/75" />
-          <div className="absolute inset-0 grid-pattern opacity-30" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/85 via-primary/75 to-primary/55" />
+          <div className="absolute inset-0 grid-pattern-dark opacity-25" />
         </>
       )}
       {!hasImage && (
         <>
           <div className="absolute inset-0 grid-pattern opacity-30" />
-          <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-accent/5 blur-3xl" />
+          <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-accent/10 blur-3xl" />
         </>
       )}
       <div className="container-content relative">

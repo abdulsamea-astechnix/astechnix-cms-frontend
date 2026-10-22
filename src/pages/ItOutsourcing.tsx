@@ -301,7 +301,7 @@ export default function ItOutsourcing() {
       </section>
 
       {/* 2. QUANTITATIVE PROOF, DASHBOARD GRAPHIC & CLIENT LOGOS — White bg */}
-      <section className="border-y border-border bg-white py-14 md:py-20">
+      <section className="border-y border-border bg-surface py-14 md:py-20">
         <div className="container-content">
           <div className="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-4">
             {stats.map((stat, i) => (
@@ -342,8 +342,8 @@ export default function ItOutsourcing() {
         </div>
       </section>
 
-      {/* 3. PROBLEM VS. SOLUTION MATRIX — White bg */}
-      <section className="bg-white py-14 md:py-20">
+      {/* 3. PROBLEM VS. SOLUTION MATRIX — Tinted bg */}
+      <section className="bg-surface py-14 md:py-20">
         <div className="container-content">
           <SectionHeader
             align="center"
@@ -429,8 +429,8 @@ export default function ItOutsourcing() {
         </div>
       </section>
 
-      {/* 5. DELIVERY FRAMEWORK & TRANSITION TIMELINE — White bg */}
-      <section className="bg-white py-14 md:py-20">
+      {/* 5. DELIVERY FRAMEWORK & TRANSITION TIMELINE — Tinted bg */}
+      <section className="bg-surface py-14 md:py-20">
         <div className="container-content">
           <SectionHeader
             align="center"
@@ -501,7 +501,7 @@ export default function ItOutsourcing() {
         </div>
       </section>
 
-      <section className="bg-white py-14 md:py-20">
+      <section className="bg-surface py-14 md:py-20">
         <div className="container-content">
           <motion.div
             initial={reducedMotion ? false : { opacity: 0, y: 24 }}
@@ -554,8 +554,8 @@ export default function ItOutsourcing() {
         </div>
       </section>
 
-      {/* 8. FAQ ACCORDION — Canvas bg */}
-      <section className="bg-white py-14 md:py-20">
+      {/* 8. FAQ ACCORDION — Tinted bg */}
+      <section className="bg-surface py-14 md:py-20">
         <div className="container-content">
           <SectionHeader
             align="center"

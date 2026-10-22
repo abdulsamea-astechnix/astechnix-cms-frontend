@@ -15,7 +15,7 @@ interface BreadcrumbsProps {
 export function Breadcrumbs({ items }: BreadcrumbsProps) {
   return (
     <nav aria-label="Breadcrumb" className="mb-6">
-      <ol className="flex flex-wrap items-center gap-2 text-sm text-ink-muted">
+      <ol className="flex flex-wrap items-center gap-2 text-sm text-white/50">
         {items.map((item, index) => {
           const isLast = index === items.length - 1;
           return (
@@ -23,16 +23,16 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
               {item.path && !isLast ? (
                 <Link
                   href={item.path}
-                  className="hover:text-primary transition-colors"
+                  className="hover:text-accent-light transition-colors"
                 >
                   {item.label}
                 </Link>
               ) : (
-                <span className={isLast ? "text-ink font-medium" : ""}>
+                <span className={isLast ? "text-white font-medium" : ""}>
                   {item.label}
                 </span>
               )}
-              {!isLast && <span className="text-ink-muted/50">/</span>}
+              {!isLast && <span className="text-white/30">/</span>}
             </li>
           );
         })}
@@ -57,7 +57,7 @@ export function PageHeader({
   backgroundImage,
 }: PageHeaderProps) {
   return (
-    <section className="relative overflow-hidden bg-white border-b border-border">
+    <section className="relative overflow-hidden bg-primary border-b border-white/10">
       {backgroundImage && (
         <>
           <div className="absolute inset-0">
@@ -68,20 +68,21 @@ export function PageHeader({
               loading="eager"
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-white/90 to-white/80" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/80 to-primary/65" />
+          <div className="absolute inset-0 grid-pattern-dark opacity-30" />
         </>
       )}
       {!backgroundImage && (
         <>
-          <div className="absolute inset-0 grid-pattern opacity-30" />
-          <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-accent/5 blur-3xl" />
+          <div className="absolute inset-0 grid-pattern-dark opacity-30" />
+          <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-accent/10 blur-3xl" />
         </>
       )}
       <div className="container-content relative py-14 md:py-24">
         <Breadcrumbs items={breadcrumbs} />
-        <h1 className="heading-1 text-ink max-w-3xl">{title}</h1>
+        <h1 className="heading-1 text-white max-w-3xl">{title}</h1>
         {description && (
-          <p className="text-lead mt-5 text-ink-soft max-w-2xl">
+          <p className="text-lead mt-5 text-white/70 max-w-2xl">
             {description}
           </p>
         )}

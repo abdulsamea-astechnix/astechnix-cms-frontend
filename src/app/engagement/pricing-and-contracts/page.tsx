@@ -91,10 +91,7 @@ export default function PricingContracts() {
         description="Flexible engagement models designed for IT support, endpoint management, and security monitoring. Every plan includes clear service level standards, responsive helpdesk coverage, and transparent monthly reporting."
       />
 
-      <section className="section-padding bg-surface">
-        <div className="container-content">
-          <SectionHeader
-            eyebrow="Engagement Models"
+      <section className="section-padding bg-white">
             title="Choose the structure that fits your IT operations"
             description="Pricing is tailored to your device inventory, team size, and support window requirements. We provide transparent, predictable pricing models to match your operational scale."
             className="mb-10"
@@ -103,7 +100,7 @@ export default function PricingContracts() {
             {pricingModels.map((m) => (
               <div
                 key={m.model}
-                className="flex flex-col rounded-lg border border-border bg-surface p-6"
+                className="flex flex-col rounded-lg border border-border bg-white p-6"
               >
                 <div>
                   <h3 className="text-lg font-heading font-bold text-ink">
@@ -134,7 +131,7 @@ export default function PricingContracts() {
         </div>
       </section>
 
-      <section className="section-padding bg-surface border-y border-border">
+      <section className="section-padding bg-white border-y border-border">
         <div className="container-content">
           <SectionHeader
             eyebrow="Contract Terms"
@@ -149,10 +146,7 @@ export default function PricingContracts() {
         </div>
       </section>
 
-      <section className="section-padding bg-surface">
-        <div className="container-content max-w-3xl">
-          <SectionHeader
-            eyebrow="Transparency"
+      <section className="section-padding bg-white">
             title="What we don't do"
             className="mb-6"
           />

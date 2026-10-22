@@ -154,9 +154,6 @@ export default function SLAGovernance() {
       </section>
 
       <section className="section-padding bg-surface border-y border-border">
-        <div className="container-content">
-          <SectionHeader
-            eyebrow="Incident Priority"
             title="Incident priority and escalation framework"
             description="Incidents are classified by severity. Specific response and resolution targets are defined per engagement based on business criticality — not advertised generically."
             className="mb-8"
@@ -178,7 +175,7 @@ export default function SLAGovernance() {
         </div>
       </section>
 
-      <section className="section-padding bg-surface">
+      <section className="section-padding bg-white">
         <div className="container-content">
           <SectionHeader
             eyebrow="Reporting"
@@ -193,10 +190,7 @@ export default function SLAGovernance() {
         </div>
       </section>
 
-      <section className="section-padding bg-surface border-y border-border">
-        <div className="container-content">
-          <SectionHeader
-            eyebrow="Performance"
+      <section className="section-padding bg-white border-y border-border">
             title="What we measure"
             description="Metrics are defined per service line and agreed during scoping. These are the categories we track across all engagements."
             className="mb-10"
@@ -230,7 +224,7 @@ export default function SLAGovernance() {
             ].map((m) => (
               <div
                 key={m.title}
-                className="rounded-lg border border-border bg-surface p-5"
+                className="rounded-lg border border-border bg-white p-5"
               >
                 <h3 className="text-sm font-heading font-semibold text-ink">
                   {m.title}
@@ -242,7 +236,7 @@ export default function SLAGovernance() {
         </div>
       </section>
 
-      <section className="section-padding bg-surface">
+      <section className="section-padding bg-white">
         <div className="container-content">
           <SectionHeader
             eyebrow="Comparison"
