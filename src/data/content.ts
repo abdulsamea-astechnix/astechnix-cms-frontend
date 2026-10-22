@@ -38,7 +38,7 @@ export const services: ServiceSummary[] = [
     slug: "helpdesk-end-user-support",
     title: "IT Helpdesk and Support",
     shortTitle: "IT Helpdesk",
-    icon: "Headphones", // String identifier
+    icon: "Headphones",
     description:
       "Reliable technical help for your team's day-to-day computer, access, and software needs.",
     path: "/services/helpdesk-support",
