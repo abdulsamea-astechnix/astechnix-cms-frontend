@@ -38,7 +38,7 @@ export function ProcessTimeline({ steps }: ProcessTimelineProps) {
           }}
           className="relative flex flex-col items-center text-center"
         >
-          <span className="z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-primary/30 bg-primary/10 text-sm font-heading font-bold text-primary">
+          <span className="z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-accent/30 bg-accent/10 text-sm font-heading font-bold text-accent">
             {s.step}
           </span>
 

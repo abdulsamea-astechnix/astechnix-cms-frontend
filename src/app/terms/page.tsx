@@ -20,7 +20,7 @@ export default function Terms() {
         description="The terms governing use of this website and engagement of AStechnix services."
       />
 
-      <section className="section-padding bg-card">
+      <section className="section-padding bg-surface">
         <div className="container-content max-w-prose">
           <div className="space-y-6 text-body">
             <div>

@@ -20,7 +20,7 @@ export function TestimonialSlider({ testimonials }: TestimonialSliderProps) {
   const t = testimonials[index];
 
   return (
-    <section className="bg-card py-section-sm md:py-section">
+    <section className="bg-surface py-section-sm md:py-section">
       <div className="container-content">
         <div className="mx-auto max-w-4xl">
           <p className="text-center eyebrow mb-8">
@@ -46,7 +46,7 @@ export function TestimonialSlider({ testimonials }: TestimonialSliderProps) {
                       &ldquo;{t.quote}&rdquo;
                     </p>
                     <div className="mt-6 flex items-center gap-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-full border border-primary/20 bg-primary/10 text-primary font-heading font-bold text-sm">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-full border border-accent/20 bg-accent/10 text-accent font-heading font-bold text-sm">
                         {t.initials}
                       </div>
                       <div>
@@ -60,7 +60,7 @@ export function TestimonialSlider({ testimonials }: TestimonialSliderProps) {
                     </div>
                   </div>
                   <div className="shrink-0 border-l-0 md:border-l md:border-border md:pl-8">
-                    <p className="font-heading text-4xl font-extrabold text-primary tabular-nums">
+                    <p className="font-heading text-4xl font-extrabold text-accent tabular-nums">
                       {t.metric.value}
                     </p>
                     <p className="mt-1 text-sm text-ink-muted max-w-[140px]">
@@ -73,7 +73,7 @@ export function TestimonialSlider({ testimonials }: TestimonialSliderProps) {
 
             <div className="mt-8 flex items-center justify-between">
               <p className="text-sm text-ink-muted font-medium">
-                <span className="text-primary font-heading font-bold tabular-nums">
+                <span className="text-accent font-heading font-bold tabular-nums">
                   {String(index + 1).padStart(2, "0")}
                 </span>{" "}
                 / {String(testimonials.length).padStart(2, "0")}
@@ -81,7 +81,7 @@ export function TestimonialSlider({ testimonials }: TestimonialSliderProps) {
               <div className="flex gap-2">
                 <button
                   onClick={prev}
-                  className="flex h-11 w-11 items-center justify-center rounded-md border border-border text-ink-soft transition-colors hover:border-primary hover:text-primary"
+                  className="flex h-11 w-11 items-center justify-center rounded-md border border-border text-ink-soft transition-colors hover:border-accent hover:text-accent"
                   aria-label="Previous testimonial"
                 >
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -96,7 +96,7 @@ export function TestimonialSlider({ testimonials }: TestimonialSliderProps) {
                 </button>
                 <button
                   onClick={next}
-                  className="flex h-11 w-11 items-center justify-center rounded-md border border-border text-ink-soft transition-colors hover:border-primary hover:text-primary"
+                  className="flex h-11 w-11 items-center justify-center rounded-md border border-border text-ink-soft transition-colors hover:border-accent hover:text-accent"
                   aria-label="Next testimonial"
                 >
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">

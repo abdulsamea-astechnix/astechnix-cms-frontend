@@ -54,7 +54,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           title="Article Not Found"
           description="The article you're looking for doesn't exist or may have been moved."
         />
-        <section className="section-padding bg-card">
+        <section className="section-padding bg-surface">
           <div className="container-content max-w-xl text-center">
             <Button href="/blog" variant="primary" size="lg">
               Back to All Articles
@@ -88,7 +88,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       <section className="section-padding bg-background">
         <div className="container-content max-w-3xl">
           <div className="flex flex-wrap items-center gap-4 mb-8 pb-8 border-b border-border">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full border border-primary/20 bg-primary/10 text-sm font-heading font-bold text-primary">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full border border-accent/20 bg-accent/10 text-sm font-heading font-bold text-accent">
               {post.authorName.charAt(0).toUpperCase()}
             </div>
             <div className="flex flex-col">
@@ -113,7 +113,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               {post.categories.map((cat) => (
                 <span
                   key={cat}
-                  className="badge border border-primary/20 bg-primary/10 text-primary"
+                  className="badge border border-accent/20 bg-accent/10 text-accent"
                 >
                   {cat}
                 </span>
@@ -126,7 +126,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           <div className="mt-12 pt-8 border-t border-border">
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:gap-3 transition-all"
             >
               <ArrowLeft className="h-4 w-4" />
               Back to all articles

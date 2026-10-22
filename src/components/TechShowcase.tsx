@@ -15,7 +15,7 @@ export function TechShowcase({
 
   return (
     <div
-      className={`rounded-lg border p-8 md:p-10 ${isDark ? "border-border bg-card-elevated" : "border-border bg-card"}`}
+      className={`rounded-lg border p-8 md:p-10 ${isDark ? "border-border bg-surface" : "border-border bg-white"}`}
     >
       <div className="flex flex-wrap justify-center gap-8 sm:gap-10 lg:gap-14">
         {categories.map((cat) => (
@@ -29,7 +29,7 @@ export function TechShowcase({
               {cat.items.map((item) => (
                 <span
                   key={item}
-                  className={`rounded-md px-3 py-1.5 text-sm font-medium transition-colors border border-border bg-surface text-ink-soft hover:border-primary/30 hover:text-ink`}
+                  className={`rounded-md px-3 py-1.5 text-sm font-medium transition-colors border border-border bg-surface text-ink-soft hover:border-accent/30 hover:text-ink`}
                 >
                   {item}
                 </span>

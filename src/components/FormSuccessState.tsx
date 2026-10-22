@@ -53,7 +53,7 @@ export function FormSuccessState({
 
           <a
             href={company.phoneHref}
-            className="flex items-center justify-center gap-2 rounded-lg border border-border bg-card px-3 py-1.5 text-xs font-semibold text-ink transition hover:bg-card-elevated"
+            className="flex items-center justify-center gap-2 rounded-lg border border-border bg-white px-3 py-1.5 text-xs font-semibold text-ink transition hover:bg-surface"
           >
             <Phone className="h-3.5 w-3.5 text-ink-soft" />
             {company.phoneDisplay}
@@ -61,7 +61,7 @@ export function FormSuccessState({
 
           <a
             href={company.emailHref}
-            className="flex items-center justify-center gap-2 rounded-lg border border-border bg-card px-3 py-1.5 text-xs font-semibold text-ink transition hover:bg-card-elevated"
+            className="flex items-center justify-center gap-2 rounded-lg border border-border bg-white px-3 py-1.5 text-xs font-semibold text-ink transition hover:bg-surface"
           >
             <Mail className="h-3.5 w-3.5 text-ink-soft" />
             {company.email}
@@ -71,7 +71,7 @@ export function FormSuccessState({
 
       <button
         onClick={onReset}
-        className="mt-3 text-xs font-semibold text-primary hover:underline"
+        className="mt-3 text-xs font-semibold text-accent hover:underline"
       >
         Request another estimate
       </button>

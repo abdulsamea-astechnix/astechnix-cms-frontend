@@ -61,7 +61,7 @@ export default function Home() {
         title={
           <>
             Reliable IT Infrastructure and Remote Support for{" "}
-            <span className="text-primary">Growing Teams</span>
+            <span className="text-accent">Growing Teams</span>
           </>
         }
         description="We help organizations keep their remote workstations secure, cloud environments stable, and day-to-day operations running smoothly without the usual overhead."
@@ -134,14 +134,14 @@ export default function Home() {
             "Support requests handled through a clear process",
           ].map((point) => (
             <div key={point} className="flex items-start gap-3">
-              <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+              <Check className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
               <p className="text-body-sm">{point}</p>
             </div>
           ))}
         </div>
       </ImageContentSection>
 
-      <section className="section-padding border-y border-border bg-card">
+      <section className="section-padding border-y border-border bg-surface">
         <div className="container-content">
           <SectionHeader
             eyebrow="Tools We Use"

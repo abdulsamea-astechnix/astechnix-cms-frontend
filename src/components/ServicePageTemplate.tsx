@@ -113,7 +113,7 @@ export function ServicePageTemplate({
         </div>
       </section>
 
-      <section className="section-padding bg-card">
+      <section className="section-padding bg-surface">
         <div className="container-content">
           <SectionHeader
             eyebrow="Capabilities"
@@ -154,7 +154,7 @@ export function ServicePageTemplate({
                 key={item}
                 className="flex items-start gap-3 text-base text-ink-soft"
               >
-                <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                <Check className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
                 {item}
               </li>
             ))}
@@ -162,7 +162,7 @@ export function ServicePageTemplate({
         </div>
       </section>
 
-      <section className="section-padding bg-card">
+      <section className="section-padding bg-surface">
         <div className="container-content">
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
             <div>
@@ -202,7 +202,7 @@ export function ServicePageTemplate({
                   },
                 ].map((item) => (
                   <div key={item.label} className="flex gap-3">
-                    <span className="badge border border-primary/20 bg-primary/10 text-primary shrink-0">
+                    <span className="badge border border-accent/20 bg-accent/10 text-accent shrink-0">
                       {item.label}
                     </span>
                     <p className="text-sm text-ink-soft">{item.desc}</p>
@@ -230,7 +230,7 @@ export function ServicePageTemplate({
         </div>
       </section>
 
-      <section className="section-padding bg-card">
+      <section className="section-padding bg-surface">
         <div className="container-content">
           <SectionHeader
             eyebrow="Delivery Process"
@@ -270,7 +270,7 @@ export function ServicePageTemplate({
         </div>
       </section>
 
-      <section className="section-padding bg-card">
+      <section className="section-padding bg-surface">
         <div className="container-content max-w-3xl">
           <SectionHeader
             eyebrow="FAQ"

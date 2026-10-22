@@ -10,7 +10,7 @@ export function DashboardGraphic() {
   const bars = [68, 82, 74, 90, 78, 95];
 
   return (
-    <div className="relative w-full rounded-2xl border border-border bg-card p-6 shadow-2xl backdrop-blur-md md:p-8">
+    <div className="relative w-full rounded-2xl border border-border bg-white p-6 shadow-2xl backdrop-blur-md md:p-8">
       <div className="flex items-center justify-between">
         <div>
           <p className="eyebrow">
@@ -75,7 +75,7 @@ export function DashboardGraphic() {
                 delay: i * 0.08,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className={`flex-1 rounded-t-sm ${h > 90 ? "bg-primary" : "bg-primary/40"}`}
+              className={`flex-1 rounded-t-sm ${h > 90 ? "bg-accent" : "bg-accent/40"}`}
             />
           ))}
         </div>
@@ -110,7 +110,7 @@ function StatCard({
 }) {
   return (
     <div className="min-w-0 rounded-xl border border-border bg-surface p-3.5 sm:p-4">
-      <div className="flex items-center gap-2 text-primary shrink-0">
+      <div className="flex items-center gap-2 text-accent shrink-0">
         {icon}
       </div>
       <p className="mt-2 font-heading text-xl sm:text-2xl font-extrabold text-ink tracking-tight tabular-nums leading-tight break-words">
@@ -119,7 +119,7 @@ function StatCard({
       <p className="mt-1 text-xs text-ink-soft leading-normal break-words">
         {label}
       </p>
-      <p className="mt-0.5 text-[10px] sm:text-xs font-medium text-primary/70 leading-tight break-words">
+      <p className="mt-0.5 text-[10px] sm:text-xs font-medium text-accent/70 leading-tight break-words">
         {subtext}
       </p>
     </div>

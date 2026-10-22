@@ -37,7 +37,7 @@ export function ResponsiveTable({
               {rows.map((row, i) => (
                 <tr
                   key={i}
-                  className={i % 2 === 0 ? "bg-card" : "bg-surface/50"}
+                  className={i % 2 === 0 ? "bg-white" : "bg-surface/50"}
                 >
                   {row.map((cell, j) => (
                     <td
@@ -56,7 +56,7 @@ export function ResponsiveTable({
 
       <div className="space-y-3 md:hidden">
         {rows.map((row, i) => (
-          <div key={i} className="rounded-lg border border-border bg-card p-4">
+          <div key={i} className="rounded-lg border border-border bg-white p-4">
             {headers.map((h, j) => (
               <div
                 key={h}

@@ -20,7 +20,7 @@ export default function Privacy() {
         description="How AStechnix collects, uses, and protects your personal data."
       />
 
-      <section className="section-padding bg-card">
+      <section className="section-padding bg-surface">
         <div className="container-content max-w-prose">
           <div className="space-y-6 text-body">
             <div>

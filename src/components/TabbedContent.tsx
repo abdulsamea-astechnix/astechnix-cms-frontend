@@ -31,7 +31,7 @@ export function TabbedContent({
   const [active, setActive] = useState(tabs[0].id);
   const reducedMotion = useReducedMotion();
   const activeTab = tabs.find((t) => t.id === active) ?? tabs[0];
-  const color = variant === "light" ? "bg-background" : "bg-card";
+  const color = variant === "light" ? "bg-white" : "bg-surface";
 
   return (
     <section
@@ -53,7 +53,7 @@ export function TabbedContent({
               className={`px-5 py-2.5 rounded-md text-sm font-semibold transition-all duration-300 ${
                 active === tab.id
                   ? "bg-primary text-primary-foreground"
-                  : "bg-surface text-ink-soft border border-border hover:border-primary/30 hover:text-ink"
+                  : "bg-surface text-ink-soft border border-border hover:border-accent/30 hover:text-ink"
               }`}
             >
               {tab.label}
@@ -77,7 +77,7 @@ export function TabbedContent({
             {activeTab.linkLabel && activeTab.linkHref && (
               <Link
                 href={activeTab.linkHref}
-                className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all"
+                className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-accent hover:gap-3 transition-all"
               >
                 {activeTab.linkLabel}
                 <ArrowRight className="h-4 w-4" />

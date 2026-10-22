@@ -27,7 +27,7 @@ export function ImageContentSection({
   const isTinted = variant === "tinted";
 
   return (
-    <section className={isTinted ? "bg-card" : "bg-background"}>
+    <section className={isTinted ? "bg-surface" : "bg-white">
       <div className="container-content py-section-sm md:py-section">
         <div
           className={`grid items-center gap-10 lg:gap-16 lg:grid-cols-2 ${reverse ? "lg:grid-flow-dense" : ""}`}
@@ -48,7 +48,7 @@ export function ImageContentSection({
                 className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-105"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
             </div>
           </motion.div>
 

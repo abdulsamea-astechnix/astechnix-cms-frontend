@@ -63,7 +63,7 @@ async function BlogContent() {
 
   if (posts.length === 0) {
     return (
-      <section className="section-padding bg-card">
+      <section className="section-padding bg-surface">
         <div className="container-content max-w-2xl">
           <div className="rounded-xl border border-dashed border-border bg-surface p-10 text-center">
             <p className="heading-3 text-ink">Articles coming soon</p>
@@ -93,7 +93,7 @@ async function BlogContent() {
       )}
 
       {rest.length > 0 && (
-        <section className="section-padding bg-card">
+        <section className="section-padding bg-surface">
           <div className="container-content">
             <h2 className="heading-3 text-ink mb-8">All Articles</h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -110,7 +110,7 @@ async function BlogContent() {
 
 function BlogLoadingState() {
   return (
-    <section className="section-padding bg-card text-center py-20">
+    <section className="section-padding bg-surface text-center py-20">
       <p className="text-ink-muted text-lg">Loading articles...</p>
     </section>
   );
@@ -118,14 +118,14 @@ function BlogLoadingState() {
 
 function FeaturedCard({ post }: { post: BlogPostSummary }) {
   return (
-    <article className="overflow-hidden rounded-xl border border-border bg-card transition-all duration-300 hover:border-border-light">
+    <article className="overflow-hidden rounded-xl border border-border bg-surface transition-all duration-300 hover:border-border-light">
       <div className="grid gap-0 lg:grid-cols-2">
         <div className="flex flex-col justify-center p-8 md:p-10 lg:p-12">
           <div className="flex flex-wrap items-center gap-3 mb-4">
             {post.categories.slice(0, 2).map((cat) => (
               <span
                 key={cat}
-                className="badge border border-primary/20 bg-primary/10 text-primary"
+                className="badge border border-accent/20 bg-accent/10 text-accent"
               >
                 {cat}
               </span>
@@ -134,7 +134,7 @@ function FeaturedCard({ post }: { post: BlogPostSummary }) {
           <h2 className="heading-2 text-ink mb-4">
             <Link
               href={`/blog/${post.slug}`}
-              className="hover:text-primary transition-colors"
+              className="hover:text-accent transition-colors"
             >
               {post.title}
             </Link>
@@ -153,17 +153,17 @@ function FeaturedCard({ post }: { post: BlogPostSummary }) {
           </div>
           <Link
             href={`/blog/${post.slug}`}
-            className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all"
+            className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-accent hover:gap-3 transition-all"
           >
             Read article
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
-        <div className="relative min-h-[280px] bg-gradient-to-br from-brand-dark to-surface lg:min-h-full">
+        <div className="relative min-h-[280px] bg-gradient-to-br from-primary to-surface lg:min-h-full">
           <div className="absolute inset-0 grid-pattern-lime opacity-30" />
           <div className="absolute inset-0 flex items-center justify-center p-10">
             <div className="text-center">
-              <p className="font-heading text-6xl font-extrabold text-primary/15">
+              <p className="font-heading text-6xl font-extrabold text-accent/15">
                 {post.title.charAt(0)}
               </p>
             </div>
@@ -176,12 +176,12 @@ function FeaturedCard({ post }: { post: BlogPostSummary }) {
 
 function PostCard({ post }: { post: BlogPostSummary }) {
   return (
-    <article className="group flex flex-col rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:border-border-light hover:-translate-y-1">
+    <article className="group flex flex-col rounded-xl border border-border bg-surface p-6 transition-all duration-300 hover:border-border-light hover:-translate-y-1">
       <div className="flex flex-wrap items-center gap-2 mb-3">
         {post.categories.slice(0, 1).map((cat) => (
           <span
             key={cat}
-            className="badge border border-primary/20 bg-primary/10 text-primary"
+            className="badge border border-accent/20 bg-accent/10 text-accent"
           >
             {cat}
           </span>
@@ -190,7 +190,7 @@ function PostCard({ post }: { post: BlogPostSummary }) {
       <h3 className="text-lg font-heading font-bold text-ink leading-snug">
         <Link
           href={`/blog/${post.slug}`}
-          className="hover:text-primary transition-colors"
+          className="hover:text-accent transition-colors"
         >
           {post.title}
         </Link>

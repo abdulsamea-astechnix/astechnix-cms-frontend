@@ -116,7 +116,7 @@ export default function SLAGovernance() {
         description="SLA governance is the mechanism that converts a service contract into operational accountability. It's what differentiates managed delivery from staff augmentation."
       />
 
-      <section className="section-padding bg-card">
+      <section className="section-padding bg-surface">
         <div className="container-content">
           <SectionHeader
             eyebrow="Governance Framework"
@@ -153,7 +153,7 @@ export default function SLAGovernance() {
         </div>
       </section>
 
-      <section className="section-padding bg-card border-y border-border">
+      <section className="section-padding bg-surface border-y border-border">
         <div className="container-content">
           <SectionHeader
             eyebrow="Incident Priority"
@@ -178,7 +178,7 @@ export default function SLAGovernance() {
         </div>
       </section>
 
-      <section className="section-padding bg-card">
+      <section className="section-padding bg-surface">
         <div className="container-content">
           <SectionHeader
             eyebrow="Reporting"
@@ -193,7 +193,7 @@ export default function SLAGovernance() {
         </div>
       </section>
 
-      <section className="section-padding bg-card border-y border-border">
+      <section className="section-padding bg-surface border-y border-border">
         <div className="container-content">
           <SectionHeader
             eyebrow="Performance"
@@ -230,7 +230,7 @@ export default function SLAGovernance() {
             ].map((m) => (
               <div
                 key={m.title}
-                className="rounded-lg border border-border bg-card p-5"
+                className="rounded-lg border border-border bg-surface p-5"
               >
                 <h3 className="text-sm font-heading font-semibold text-ink">
                   {m.title}
@@ -242,7 +242,7 @@ export default function SLAGovernance() {
         </div>
       </section>
 
-      <section className="section-padding bg-card">
+      <section className="section-padding bg-surface">
         <div className="container-content">
           <SectionHeader
             eyebrow="Comparison"

@@ -28,16 +28,16 @@ export default function CaseStudies() {
         description="Documented engagement outcomes with verified metrics. We publish case studies only when results have been confirmed — not as marketing material."
       />
 
-      <section className="section-padding bg-card">
+      <section className="section-padding bg-surface">
         <div className="container-content">
           {caseStudies.length > 0 ? (
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {caseStudies.map((study) => (
                 <div
                   key={study.slug}
-                  className="rounded-lg border border-border bg-card p-6"
+                  className="rounded-lg border border-border bg-surface p-6"
                 >
-                  <p className="text-sm font-semibold text-primary">
+                  <p className="text-sm font-semibold text-accent">
                     {study.sector}
                   </p>
                   <h3 className="mt-2 text-lg font-heading font-bold text-ink">
@@ -47,7 +47,7 @@ export default function CaseStudies() {
                   <div className="mt-4 grid grid-cols-2 gap-3 border-t border-border pt-4">
                     {study.metrics.map((m) => (
                       <div key={m.label}>
-                        <p className="font-heading text-xl font-bold text-brand-dark">
+                        <p className="font-heading text-xl font-bold text-primary">
                           {m.value}
                         </p>
                         <p className="text-xs text-ink-muted">{m.label}</p>
