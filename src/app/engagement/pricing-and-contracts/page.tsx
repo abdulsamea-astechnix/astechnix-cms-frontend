@@ -92,6 +92,9 @@ export default function PricingContracts() {
       />
 
       <section className="section-padding bg-white">
+        <div className="container-content">
+          <SectionHeader
+            eyebrow="Engagement Models"
             title="Choose the structure that fits your IT operations"
             description="Pricing is tailored to your device inventory, team size, and support window requirements. We provide transparent, predictable pricing models to match your operational scale."
             className="mb-10"
@@ -147,6 +150,9 @@ export default function PricingContracts() {
       </section>
 
       <section className="section-padding bg-white">
+        <div className="container-content max-w-3xl">
+          <SectionHeader
+            eyebrow="Transparency"
             title="What we don't do"
             className="mb-6"
           />

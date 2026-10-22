@@ -33,6 +33,9 @@ export default function About() {
       <TrustStrip points={proofPoints} />
 
       <section className="section-padding bg-white">
+        <div className="container-content max-w-3xl">
+          <SectionHeader
+            eyebrow="Who We Are"
             title="A practical IT support partner for growing teams."
             className="mb-6"
           />

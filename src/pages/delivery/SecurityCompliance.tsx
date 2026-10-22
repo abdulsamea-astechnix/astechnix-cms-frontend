@@ -65,7 +65,7 @@ export default function SecurityCompliance() {
         </div>
       </section>
 
-      <section className="section-padding bg-surface border-y border-border">
+      <section className="section-padding bg-white border-y border-border">
         <div className="container-content max-w-3xl">
           <SectionHeader
             eyebrow="Contractual Controls"
@@ -141,9 +141,9 @@ export default function SecurityCompliance() {
         </div>
       </section>
 
-      <section className="section-padding bg-surface border-y border-border">
+      <section className="section-padding bg-white border-y border-border">
         <div className="container-content max-w-3xl">
-          <div className="rounded-lg border border-border bg-white p-6 md:p-8">
+          <div className="rounded-lg border border-border bg-surface p-6 md:p-8">
             <h3 className="heading-3 text-ink">
               On certifications and compliance standards
             </h3>
