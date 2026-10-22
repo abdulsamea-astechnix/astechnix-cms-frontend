@@ -92,9 +92,10 @@ function HeaderContent() {
     <>
       <header
         className={`sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b transition-all duration-300 ${
-          scrolled ? "border-border shadow-md shadow-black/5" : "border-transparent"
-        }`
-      }
+          scrolled
+            ? "border-border shadow-md shadow-black/5"
+            : "border-transparent"
+        }`}
       >
         <div className="container-content">
           <div className="flex h-16 items-center justify-between lg:h-[72px]">
@@ -189,9 +190,7 @@ function DesktopNavigation({
               <button
                 onClick={() => setOpenMenu(isOpen ? null : group.label)}
                 className={`flex items-center gap-1 px-2.5 xl:px-3.5 py-2 text-xs xl:text-sm font-medium transition-colors duration-200 whitespace-nowrap ${
-                  isActive
-                    ? "text-primary"
-                    : "text-ink hover:text-primary"
+                  isActive ? "text-primary" : "text-ink hover:text-primary"
                 }`}
                 aria-expanded={isOpen}
                 aria-haspopup="true"
@@ -207,9 +206,7 @@ function DesktopNavigation({
               <Link
                 href={group.path}
                 className={`px-2.5 xl:px-3.5 py-2 text-xs xl:text-sm font-medium transition-colors duration-200 whitespace-nowrap ${
-                  isActive
-                    ? "text-primary"
-                    : "text-ink hover:text-primary"
+                  isActive ? "text-primary" : "text-ink hover:text-primary"
                 }`}
               >
                 {group.label}

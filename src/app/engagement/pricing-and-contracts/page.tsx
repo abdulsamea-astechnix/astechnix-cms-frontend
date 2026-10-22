@@ -75,16 +75,25 @@ const contractTerms: string[][] = [
   ["Trial Period", "30-day evaluation window with standard exit options"],
 ];
 
+const exclusions = [
+  "We don't use generic hidden rate cards — pricing scales directly with your device or user count",
+  "We don't charge separate fees for initial device onboarding setup or agent deployment",
+  "We don't bill extra for standard routine maintenance windows or scheduled patch updates",
+  "We don't lock you into rigid long-term commitments beyond your initial agreement term",
+  "We don't restrict your access to ticketing metrics or endpoint health scorecards",
+];
+
 export default function PricingContracts() {
   return (
     <>
       <Seo
         meta={{
-          title: "Pricing & Contracts | AStechnix",
+          title: "Pricing & Contracts | ASTechnix",
           description:
             "Transparent IT support and endpoint management pricing based on device counts, helpdesk retainers, and fixed-scope security audits.",
         }}
       />
+
       <PageHeader
         breadcrumbs={crumbs}
         title="Pricing & Contracts"
@@ -92,10 +101,13 @@ export default function PricingContracts() {
       />
 
       <section className="section-padding bg-white">
+        <div className="container-content">
+          <SectionHeader
             title="Choose the structure that fits your IT operations"
             description="Pricing is tailored to your device inventory, team size, and support window requirements. We provide transparent, predictable pricing models to match your operational scale."
             className="mb-10"
           />
+
           <div className="grid gap-5 md:grid-cols-3">
             {pricingModels.map((m) => (
               <div
@@ -110,10 +122,13 @@ export default function PricingContracts() {
                     {m.structure}
                   </p>
                 </div>
+
                 <p className="mt-3 text-sm font-medium text-ink">{m.best}</p>
+
                 <p className="mt-2 text-sm text-ink-soft leading-relaxed">
                   {m.description}
                 </p>
+
                 <ul className="mt-4 space-y-2 border-t border-border pt-4">
                   {m.features.map((f) => (
                     <li
@@ -121,7 +136,7 @@ export default function PricingContracts() {
                       className="flex items-start gap-2 text-sm text-ink-soft"
                     >
                       <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-                      {f}
+                      <span>{f}</span>
                     </li>
                   ))}
                 </ul>
@@ -131,7 +146,7 @@ export default function PricingContracts() {
         </div>
       </section>
 
-      <section className="section-padding bg-white border-y border-border">
+      <section className="section-padding border-y border-border bg-white">
         <div className="container-content">
           <SectionHeader
             eyebrow="Contract Terms"
@@ -139,6 +154,7 @@ export default function PricingContracts() {
             description="Every support engagement includes these foundational terms by default. Custom requirements can be aligned during onboarding."
             className="mb-8"
           />
+
           <ResponsiveTable
             headers={["Provision", "Standard Term"]}
             rows={contractTerms}
@@ -147,23 +163,17 @@ export default function PricingContracts() {
       </section>
 
       <section className="section-padding bg-white">
-            title="What we don't do"
-            className="mb-6"
-          />
+        <div className="container-content">
+          <SectionHeader title="What we don't do" className="mb-6" />
+
           <ul className="space-y-3">
-            {[
-              "We don't use generic hidden rate cards — pricing scales directly with your device or user count",
-              "We don't charge separate fees for initial device onboarding setup or agent deployment",
-              "We don't bill extra for standard routine maintenance windows or scheduled patch updates",
-              "We don't lock you into rigid long-term commitments beyond your initial agreement term",
-              "We don't restrict your access to ticketing metrics or endpoint health scorecards",
-            ].map((item) => (
+            {exclusions.map((item) => (
               <li
                 key={item}
                 className="flex items-start gap-3 text-base text-ink-soft"
               >
                 <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-ink-muted" />
-                {item}
+                <span>{item}</span>
               </li>
             ))}
           </ul>
@@ -174,7 +184,7 @@ export default function PricingContracts() {
         title="Need a custom quote for your device fleet?"
         description="Share your endpoint count and support requirements. We'll provide a transparent pricing proposal with no obligation."
       >
-        <Button href={ctaConfig.primary.path} variant="primary" size="lg">
+        <Button href={ctaConfig.primary.path} variant="secondary" size="lg">
           {ctaConfig.primary.label}
         </Button>
       </CTASection>

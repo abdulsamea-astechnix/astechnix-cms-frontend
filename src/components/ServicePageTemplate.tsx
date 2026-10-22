@@ -309,7 +309,7 @@ export function ServicePageTemplate({
         title={`Ready to discuss ${isAcronym === true ? shortTitle : shortTitle.toLowerCase()}?`}
         description="Book a consultation with our delivery team to explore how this service can be structured for your environment."
       >
-        <Button href={ctaConfig.primary.path} variant="primary" size="lg">
+        <Button href={ctaConfig.primary.path} variant="secondary" size="lg">
           {contextualCtaLabel}
         </Button>
       </CTASection>

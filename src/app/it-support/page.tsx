@@ -252,34 +252,56 @@ export default function ItSupportPage() {
   return (
     <>
       {/* 1. HERO SECTION — Dark bg, two columns: content left, lead form right */}
+
       <section
         id="lead-form"
         className="relative scroll-mt-20 overflow-hidden bg-primary"
       >
-        <div className="absolute inset-0 grid-pattern-dark opacity-40" />
-        <div className="absolute -right-40 -top-40 h-96 w-96 rounded-full bg-accent/10 blur-3xl" />
+        {/* Background dot pattern */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 opacity-30"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, rgba(255,255,255,0.65) 1px, transparent 1.5px)",
+            backgroundSize: "24px 24px",
+          }}
+        />
+
+        {/* Decorative accent glow */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-40 -top-40 h-96 w-96 rounded-full bg-accent/10 blur-3xl"
+        />
+
         <div className="container-content relative py-14 md:py-20 lg:py-24">
           <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
             {/* Left column: headline, subheadline, trust badges, phone, email */}
             <motion.div
               initial={reducedMotion ? false : { opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              transition={{
+                duration: 0.5,
+                ease: [0.22, 1, 0.36, 1],
+              }}
             >
               <span className="badge bg-accent/15 text-accent-light">
                 <ShieldCheck className="h-3.5 w-3.5" />
                 Managed IT Support
               </span>
+
               <h1 className="heading-display mt-5 text-white">
                 Support With Confidence: Cut IT Costs by{" "}
                 <span className="text-accent">45%</span>
               </h1>
+
               <p className="text-lead mt-6 text-white/70">
                 All-in-one IT support built for growing companies. Access
                 reliable, full-service helpdesk and IT support with zero quality
                 loss and full overlap with working hours.
               </p>
 
+              {/* Trust badges */}
               <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
                 {trustBadges.map((badge) => (
                   <div
@@ -292,17 +314,19 @@ export default function ItSupportPage() {
                 ))}
               </div>
 
+              {/* Contact buttons */}
               <div className="mt-8 flex flex-col gap-3 lg:flex-row lg:items-center">
                 <Link
                   href={company.phoneHref}
-                  className="btn !px-4 sm:!px-6 !py-3 !text-sm sm:!text-base border border-white/25 text-white hover:bg-white/10 hover:border-white/50 inline-flex items-center justify-center gap-2 whitespace-nowrap shrink-0"
+                  className="btn inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap border border-white/25 !px-4 !py-3 !text-sm text-white hover:border-white/50 hover:bg-white/10 sm:!px-6 sm:!text-base"
                 >
                   <Phone className="h-4 w-4 shrink-0 text-accent" />
                   <span>{company.phoneDisplay}</span>
                 </Link>
+
                 <Link
                   href={company.emailHref}
-                  className="btn !px-4 sm:!px-6 !py-3 !text-sm sm:!text-base border border-white/25 text-white hover:bg-white/10 hover:border-white/50 inline-flex items-center justify-center gap-2 whitespace-nowrap shrink-0"
+                  className="btn inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap border border-white/25 !px-4 !py-3 !text-sm text-white hover:border-white/50 hover:bg-white/10 sm:!px-6 sm:!text-base"
                 >
                   <Mail className="h-4 w-4 shrink-0 text-accent" />
                   <span>{company.email}</span>
@@ -310,7 +334,7 @@ export default function ItSupportPage() {
               </div>
             </motion.div>
 
-            {/* Right column: embedded lead form card above the fold */}
+            {/* Right column: embedded lead form */}
             <motion.div
               initial={reducedMotion ? false : { opacity: 0, x: 24 }}
               animate={{ opacity: 1, x: 0 }}
@@ -363,7 +387,7 @@ export default function ItSupportPage() {
                 }}
                 className="rounded-lg border border-border bg-white p-4 sm:p-6 text-center shadow-card md:text-left min-w-0"
               >
-                <p className="font-heading text-3xl sm:text-4xl xl:text-5xl font-extrabold text-primary tracking-tight leading-none break-words">
+                <p className="font-heading text-2xl sm:text-3xl xl:text-4xl font-extrabold text-primary tracking-tight leading-none whitespace-nowrap">
                   <span>{stat.value}</span>
                   <span className="text-accent inline-block">
                     {stat.suffix}
@@ -532,7 +556,7 @@ export default function ItSupportPage() {
           <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <button
               onClick={scrollToForm}
-              className="btn-primary !px-7 !py-3.5 !text-base"
+              className="btn-secondary !px-7 !py-3.5 !text-base"
             >
               Start With Zero Risk
             </button>

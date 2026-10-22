@@ -88,7 +88,7 @@ export default function CaseStudies() {
         title="Want to discuss references relevant to your context?"
         description="Book a consultation. We'll share what we can within confidentiality constraints and explore whether our delivery model fits your needs."
       >
-        <Button href={ctaConfig.primary.path} variant="primary" size="lg">
+        <Button href={ctaConfig.primary.path} variant="secondary" size="lg">
           {ctaConfig.primary.label}
         </Button>
       </CTASection>

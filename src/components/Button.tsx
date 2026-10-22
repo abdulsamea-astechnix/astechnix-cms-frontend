@@ -3,7 +3,8 @@
 import { type ButtonHTMLAttributes, type ReactNode } from "react";
 import Link from "next/link";
 
-type Variant = "primary" | "secondary" | "ghost" | "dark" | "outline-white";
+type Variant =
+  "primary" | "secondary" | "ghost" | "dark" | "outline-white" | "amber";
 type Size = "sm" | "md" | "lg";
 
 const variants: Record<Variant, string> = {
@@ -15,6 +16,8 @@ const variants: Record<Variant, string> = {
   dark: "bg-primary text-white border border-primary hover:bg-primary-light",
   "outline-white":
     "bg-transparent text-white border border-white/30 hover:bg-white/10 hover:border-white/60",
+  amber:
+    "bg-accent text-primary border border-accent shadow-sm hover:bg-accent-dark hover:border-accent-dark hover:shadow-md active:bg-accent-dark active:shadow-sm focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2",
 };
 
 const sizes: Record<Size, string> = {
